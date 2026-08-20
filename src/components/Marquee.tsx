@@ -1,4 +1,17 @@
-const PHRASES = ["Arcwell Creative", "Independent Creative Studio", "Impossible To Overlook"];
+const PHRASES = [
+  {
+    text: "Arcwell Creative",
+    className: "font-display font-extrabold uppercase tracking-tight",
+  },
+  {
+    text: "Independent Creative Studio",
+    className: "font-display font-light",
+  },
+  {
+    text: "Impossible To Overlook",
+    className: "font-cursive font-bold",
+  },
+];
 
 function MarqueeSet() {
   return (
@@ -6,9 +19,9 @@ function MarqueeSet() {
       {PHRASES.map((phrase, i) => (
         <span key={i} className="flex shrink-0 items-center">
           <span
-            className="mx-4 shrink-0 cursor-default select-none font-display text-[3.5rem] font-extrabold uppercase leading-none tracking-tight text-cream opacity-[0.07] transition-[opacity,text-shadow] duration-500 hover:opacity-90 hover:[text-shadow:0_0_40px_rgba(181,107,60,0.55)] sm:text-[5rem] lg:text-[6.5rem]"
+            className={`mx-4 shrink-0 cursor-default select-none text-[3.5rem] leading-none text-cream opacity-[0.07] transition-[opacity,text-shadow] duration-500 hover:opacity-90 hover:[text-shadow:0_0_40px_rgba(181,107,60,0.55)] sm:text-[5rem] lg:text-[6.5rem] ${phrase.className}`}
           >
-            {phrase}
+            {phrase.text}
           </span>
           <span className="mx-4 shrink-0 text-[3.5rem] text-copper-light opacity-30 sm:text-[5rem] lg:text-[6.5rem]">
             •
@@ -22,7 +35,7 @@ function MarqueeSet() {
 export function Marquee() {
   return (
     <section className="overflow-hidden border-t border-cream/10 bg-ink py-10 sm:py-14">
-      <div className="flex w-max animate-marquee">
+      <div className="flex w-max animate-marquee will-change-transform">
         <MarqueeSet />
         <MarqueeSet />
       </div>

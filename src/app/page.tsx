@@ -18,6 +18,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <Marquee />
         <BrandStatement />
         <SelectedWork />
         <Services />
@@ -28,7 +29,6 @@ export default function Home() {
         <FinalCTA />
         <Contact />
       </main>
-      <Marquee />
       <Footer />
     </>
   );

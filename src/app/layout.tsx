@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Archivo } from "next/font/google";
+import { Geist, Geist_Mono, Archivo, Dancing_Script } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/lib/site-config";
 
@@ -16,7 +16,13 @@ const geistMono = Geist_Mono({
 const archivo = Archivo({
   variable: "--font-archivo",
   subsets: ["latin"],
-  weight: ["700", "800"],
+  weight: ["300", "400", "700", "800"],
+});
+
+const dancingScript = Dancing_Script({
+  variable: "--font-dancing-script",
+  subsets: ["latin"],
+  weight: ["600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -39,7 +45,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${archivo.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${archivo.variable} ${dancingScript.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-ink">{children}</body>
     </html>
