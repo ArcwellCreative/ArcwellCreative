@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { navigation, socialLinks } from "@/lib/site-config";
+import { contactInformation, navigation, socialLinks } from "@/lib/site-config";
 import { handleHashLinkClick } from "@/lib/scroll";
 
 // REPLACE America/Chicago if Arcwell's real base timezone differs
@@ -128,6 +128,12 @@ export function Footer() {
           <p className="text-body text-cream/50">
             © {year} Arcwell Creative. All rights reserved.
           </p>
+          <a
+            href={`mailto:${contactInformation.email}`}
+            className="text-body text-cream/50 transition-colors hover:text-cream"
+          >
+            {contactInformation.email}
+          </a>
         </div>
       </div>
     </footer>
