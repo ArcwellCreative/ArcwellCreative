@@ -9,6 +9,7 @@ import { IntroOffer } from "@/components/IntroOffer";
 import { About } from "@/components/About";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Contact } from "@/components/Contact";
+import { Marquee } from "@/components/Marquee";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
@@ -27,6 +28,7 @@ export default function Home() {
         <FinalCTA />
         <Contact />
       </main>
+      <Marquee />
       <Footer />
     </>
   );
