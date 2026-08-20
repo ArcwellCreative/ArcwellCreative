@@ -50,7 +50,7 @@ export function Header() {
                 width={600}
                 height={121}
                 style={{ height: "auto" }}
-                className="w-[76px] sm:w-[88px]"
+                className="w-[92px] sm:w-[108px]"
                 priority
               />
             </HoverTilt>
