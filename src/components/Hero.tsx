@@ -55,7 +55,7 @@ export function Hero() {
           className="mt-6 text-display font-display font-extrabold tracking-tight text-cream sm:mt-8"
         >
           <Typewriter
-            text="ARCWELL."
+            text="ARCWELL"
             startDelay={300}
             speed={70}
             onDone={() => setWordmarkDone(true)}
