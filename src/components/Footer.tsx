@@ -14,10 +14,10 @@ export function Footer() {
         <div className="flex flex-col gap-12 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <Image
-              src="/arcwell-logo-light.svg"
+              src="/arcwell-logo-light.png"
               alt="Arcwell Creative"
-              width={100}
-              height={20}
+              width={600}
+              height={121}
               style={{ height: "auto" }}
               className="w-[100px]"
             />
