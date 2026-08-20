@@ -1,15 +1,19 @@
 const PHRASES = [
   {
-    text: "Arcwell Creative",
+    text: "Built To Be Noticed",
     className: "font-display font-extrabold uppercase tracking-tight",
   },
   {
-    text: "Independent Creative Studio",
+    text: "Distinguished By Design",
     className: "font-display font-light",
   },
   {
     text: "Impossible To Overlook",
-    className: "font-cursive font-bold",
+    className: "font-serif-italic italic",
+  },
+  {
+    text: "Crafted, Not Templated",
+    className: "font-display font-medium uppercase tracking-[0.15em]",
   },
 ];
 
