@@ -6,6 +6,7 @@ import { motion } from "motion/react";
 import { fadeUp, viewportOnce } from "@/lib/motion";
 import { handleHashLinkClick } from "@/lib/scroll";
 import { Typewriter } from "./Typewriter";
+import { HeroBackground } from "./HeroBackground";
 import { BrowserMockup } from "./mockups/BrowserMockup";
 import { PosterMockup } from "./mockups/PosterMockup";
 import { MarkMockup } from "./mockups/MarkMockup";
@@ -23,7 +24,7 @@ export function Hero() {
 
   return (
     <section id="top" className="relative overflow-hidden pt-36 pb-14 sm:pt-44 sm:pb-24 lg:pb-32">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_120%_60%_at_50%_-10%,rgba(147,77,34,0.16),transparent)]" />
+      <HeroBackground />
 
       <div className="container-arc relative">
         <div className="flex flex-wrap items-center justify-between gap-4">
