@@ -3,6 +3,7 @@
 :root {
   --color-ink: #0c0c0c;
   --color-charcoal: #231f20;
+  --color-graphite: #1c1c1e;
   --color-copper: #934d22;
   --color-copper-light: #b56b3c;
   --color-cream: #f4f1ec;
@@ -29,6 +30,7 @@
 @theme inline {
   --color-ink: var(--color-ink);
   --color-charcoal: var(--color-charcoal);
+  --color-graphite: var(--color-graphite);
   --color-copper: var(--color-copper);
   --color-copper-light: var(--color-copper-light);
   --color-cream: var(--color-cream);
