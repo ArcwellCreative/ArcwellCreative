@@ -25,7 +25,7 @@ export function About() {
               </h2>
             </Reveal>
             <Reveal delay={0.15}>
-              <p className="text-body-lg mt-10 max-w-xl text-cream/55">
+              <p className="text-body-lg mt-10 max-w-xl text-cream/65">
                 We work with local and growing businesses to create better
                 websites, stronger identities, and professional visual
                 materials that make the business feel as established as the

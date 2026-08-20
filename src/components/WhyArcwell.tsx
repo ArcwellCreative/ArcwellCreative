@@ -27,7 +27,7 @@ export function WhyArcwell() {
                   <h3 className="text-h3 font-medium tracking-tight text-cream">
                     {item.title}
                   </h3>
-                  <p className="text-body mt-3 text-cream/55">
+                  <p className="text-body mt-3 text-cream/65">
                     {item.description}
                   </p>
                 </div>

@@ -62,7 +62,7 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={(e) => handleHashLinkClick(e, item.href)}
-                className="label text-cream/70 transition-colors hover:text-cream"
+                className="label text-cream/80 transition-colors hover:text-cream"
               >
                 <HoverTilt>{item.label}</HoverTilt>
               </Link>

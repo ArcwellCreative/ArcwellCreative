@@ -8,7 +8,7 @@ export function SectionLabel({
   return (
     <div
       className={`label flex items-center gap-2.5 ${
-        light ? "text-charcoal/60" : "text-cream/55"
+        light ? "text-charcoal/60" : "text-cream/65"
       }`}
     >
       <span className="h-1.5 w-1.5 rounded-full bg-copper" aria-hidden />

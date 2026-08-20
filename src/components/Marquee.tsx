@@ -19,7 +19,7 @@ function MarqueeSet() {
 
 export function Marquee() {
   return (
-    <section className="overflow-hidden border-t border-cream/10 bg-graphite py-10 sm:py-14">
+    <section className="overflow-hidden border-t border-cream/10 bg-ink py-10 sm:py-14">
       <div className="flex w-max animate-marquee will-change-transform">
         <MarqueeSet />
         <MarqueeSet />

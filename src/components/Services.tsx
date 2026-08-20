@@ -35,14 +35,14 @@ export function Services() {
                 >
                   <span
                     className={`label shrink-0 transition-colors ${
-                      isOpen ? "text-copper-light" : "text-cream/35"
+                      isOpen ? "text-copper-light" : "text-cream/50"
                     }`}
                   >
                     {service.number}
                   </span>
                   <span
                     className={`text-h3 flex-1 font-medium tracking-tight transition-colors ${
-                      isOpen ? "text-cream" : "text-cream/55"
+                      isOpen ? "text-cream" : "text-cream/65"
                     }`}
                   >
                     {service.title}
@@ -51,7 +51,7 @@ export function Services() {
                     aria-hidden
                     animate={{ rotate: isOpen ? 45 : 0 }}
                     transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                    className="shrink-0 text-2xl font-light text-cream/50"
+                    className="shrink-0 text-2xl font-light text-cream/60"
                   >
                     +
                   </motion.span>
@@ -66,7 +66,7 @@ export function Services() {
                       transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
                     >
-                      <p className="text-body-lg max-w-lg pb-8 pl-0 text-cream/55 sm:pb-10 sm:pl-[3.75rem]">
+                      <p className="text-body-lg max-w-lg pb-8 pl-0 text-cream/65 sm:pb-10 sm:pl-[3.75rem]">
                         {service.description}
                       </p>
                     </motion.div>

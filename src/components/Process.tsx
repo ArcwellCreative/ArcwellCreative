@@ -23,7 +23,7 @@ export function Process() {
                 <h3 className="text-h3 mt-4 font-medium tracking-tight text-cream">
                   {step.title}
                 </h3>
-                <p className="text-body mt-3 max-w-[24ch] text-cream/55">
+                <p className="text-body mt-3 max-w-[24ch] text-cream/65">
                   {step.description}
                 </p>
               </div>

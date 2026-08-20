@@ -15,7 +15,7 @@ export function BrandStatement() {
           </p>
         </Reveal>
         <Reveal delay={0.2}>
-          <p className="text-body-lg mt-10 max-w-xl text-cream/60">
+          <p className="text-body-lg mt-10 max-w-xl text-cream/70">
             Arcwell helps businesses improve everything from their website
             and logo to their advertisements and printed materials — so the
             way a business looks finally matches the quality of the work

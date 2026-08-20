@@ -20,7 +20,7 @@ export function IntroOffer() {
               </h2>
             </Reveal>
             <Reveal delay={0.2}>
-              <p className="text-body-lg mt-8 max-w-lg text-cream/60">
+              <p className="text-body-lg mt-8 max-w-lg text-cream/70">
                 We&apos;re currently selecting local businesses for
                 complimentary design concepts. Send us your current website,
                 logo, or advertisement and we&apos;ll show you what
@@ -41,7 +41,7 @@ export function IntroOffer() {
                   →
                 </span>
               </Link>
-              <p className="text-body text-cream/40 lg:text-right">
+              <p className="text-body text-cream/55 lg:text-right">
                 No obligation. No hard sell. Just a better idea of what&apos;s
                 possible.
               </p>

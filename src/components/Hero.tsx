@@ -32,7 +32,7 @@ export function Hero() {
             initial="hidden"
             animate="visible"
             variants={fadeUp}
-            className="label text-cream/50"
+            className="label text-cream/60"
           >
             Independent Creative Studio
           </motion.p>
@@ -41,7 +41,7 @@ export function Hero() {
             animate="visible"
             variants={fadeUp}
             transition={{ delay: 0.1 }}
-            className="label text-cream/50"
+            className="label text-cream/60"
           >
             Web · Brand · Design
           </motion.p>
@@ -89,7 +89,7 @@ export function Hero() {
             transition={{ delay: 0.22 }}
             className="flex flex-col gap-8 lg:col-span-5"
           >
-            <p className="text-body-lg max-w-md text-cream/65">
+            <p className="text-body-lg max-w-md text-cream/75">
               Arcwell Creative builds websites, brands, advertisements, and
               visual identities for businesses ready to look their best.
             </p>
@@ -131,7 +131,7 @@ export function Hero() {
               <div className="aspect-[4/5] transition-transform duration-350 ease-in-out will-change-transform group-hover:-translate-y-7 group-hover:rotate-0">
                 <Comp className="shadow-[0_30px_60px_-20px_rgba(0,0,0,0.6)]" />
               </div>
-              <p className="label mt-3 text-cream/45">{label}</p>
+              <p className="label mt-3 text-cream/55">{label}</p>
             </motion.div>
           ))}
         </div>

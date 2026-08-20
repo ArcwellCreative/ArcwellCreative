@@ -23,7 +23,7 @@ export function SelectedWork() {
             </Reveal>
           </div>
           <Reveal delay={0.15}>
-            <p className="text-body max-w-xs text-cream/50">
+            <p className="text-body max-w-xs text-cream/60">
               Arcwell is a newer studio — these are visual concept pieces,
               not completed client work. Real projects will replace them as
               our portfolio grows.
@@ -53,11 +53,11 @@ export function SelectedWork() {
                     <p className="text-h3 font-medium tracking-tight text-cream">
                       {project.category}
                     </p>
-                    <p className="text-body mt-1.5 text-cream/50">
+                    <p className="text-body mt-1.5 text-cream/60">
                       {project.discipline}
                     </p>
                   </div>
-                  <span className="label mt-1 shrink-0 text-cream/35">
+                  <span className="label mt-1 shrink-0 text-cream/50">
                     {project.number}
                   </span>
                 </div>
