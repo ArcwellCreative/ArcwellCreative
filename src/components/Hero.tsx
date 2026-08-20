@@ -7,7 +7,6 @@ import { fadeUp, viewportOnce } from "@/lib/motion";
 import { handleHashLinkClick } from "@/lib/scroll";
 import { Typewriter } from "./Typewriter";
 import { HeroBackground } from "./HeroBackground";
-import { Marquee } from "./Marquee";
 import { BrowserMockup } from "./mockups/BrowserMockup";
 import { PosterMockup } from "./mockups/PosterMockup";
 import { MarkMockup } from "./mockups/MarkMockup";
@@ -46,10 +45,6 @@ export function Hero() {
           >
             Web · Brand · Design
           </motion.p>
-        </div>
-
-        <div className="mt-6 sm:mt-8">
-          <Marquee />
         </div>
 
         <motion.h1

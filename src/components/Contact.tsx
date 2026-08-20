@@ -36,7 +36,7 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="bg-cream py-28 text-ink sm:py-36">
+    <section id="contact" className="border-t border-charcoal/10 bg-cream py-28 text-ink sm:py-36">
       <div className="container-arc">
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-4">

@@ -48,7 +48,7 @@
   --text-body: clamp(0.9375rem, 0.15vw + 0.9rem, 1.0625rem);
   --text-label: 0.8125rem;
 
-  --animate-marquee: marquee 70s linear infinite;
+  --animate-marquee: marquee 90s linear infinite;
 }
 
 @keyframes marquee {
