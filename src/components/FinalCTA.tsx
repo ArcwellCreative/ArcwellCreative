@@ -4,11 +4,13 @@ import Link from "next/link";
 import { handleHashLinkClick } from "@/lib/scroll";
 import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
+import { SectionArcs } from "./SectionArcs";
 
 export function FinalCTA() {
   return (
-    <section className="bg-cream py-28 text-ink sm:py-36">
-      <div className="container-arc">
+    <section className="relative overflow-hidden bg-cream py-28 text-ink sm:py-36">
+      <SectionArcs corner="top-right" tone="light" />
+      <div className="container-arc relative">
         <Reveal>
           <SectionLabel light>Let&apos;s Work Together</SectionLabel>
         </Reveal>

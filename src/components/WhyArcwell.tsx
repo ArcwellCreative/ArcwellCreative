@@ -1,11 +1,13 @@
 import { whyArcwell } from "@/lib/site-config";
 import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
+import { SectionArcs } from "./SectionArcs";
 
 export function WhyArcwell() {
   return (
-    <section className="border-t border-cream/10 bg-charcoal py-28 sm:py-36">
-      <div className="container-arc">
+    <section className="relative overflow-hidden border-t border-cream/10 bg-charcoal py-28 sm:py-36">
+      <SectionArcs corner="bottom-right" tone="dark" />
+      <div className="container-arc relative">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-4">
             <Reveal>
