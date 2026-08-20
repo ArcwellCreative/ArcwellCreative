@@ -8,31 +8,31 @@ import { SectionLabel } from "./SectionLabel";
 const inputClass =
   "w-full border-0 border-b border-charcoal/20 bg-transparent py-3 text-charcoal placeholder:text-charcoal/35 focus-visible:outline-none focus-visible:border-copper transition-colors";
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xzepykbb";
+
 export function Contact() {
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    data.set("_subject", `New project inquiry — ${data.get("business") || data.get("name")}`);
 
-    // REPLACE WITH REAL ARCWELL SUBMISSION HANDLER (e.g. an API route or form service)
-    // contactInformation.email is a placeholder until a real inbox is supplied.
-    const subject = `New project inquiry — ${data.get("business") || data.get("name")}`;
-    const body = [
-      `Name: ${data.get("name")}`,
-      `Business: ${data.get("business")}`,
-      `Email: ${data.get("email")}`,
-      `Phone: ${data.get("phone") || "—"}`,
-      `Service: ${data.get("service")}`,
-      "",
-      `${data.get("details")}`,
-    ].join("\n");
+    setStatus("submitting");
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
 
-    window.location.href = `mailto:${contactInformation.email}?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(body)}`;
-
-    setSubmitted(true);
+      if (!response.ok) throw new Error("Submission failed");
+      setStatus("success");
+      form.reset();
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -56,14 +56,15 @@ export function Contact() {
           </div>
 
           <div className="lg:col-span-8">
-            {submitted ? (
+            {status === "success" ? (
               <Reveal>
                 <div className="border-t border-charcoal/15 py-16">
                   <p className="text-h3 font-medium tracking-tight text-charcoal">
-                    Thanks — your email client should be opening now.
+                    Thanks — we&apos;ve got your project details.
                   </p>
                   <p className="text-body mt-3 max-w-md text-charcoal/55">
-                    If nothing happened, reach us directly at{" "}
+                    We&apos;ll be in touch soon. In the meantime, feel free to
+                    reach us directly at{" "}
                     <span className="font-medium">
                       {contactInformation.email}
                     </span>
@@ -128,11 +129,23 @@ export function Contact() {
                     </div>
                   </div>
 
+                  {status === "error" && (
+                    <p className="text-body mt-6 max-w-md text-copper">
+                      Something went wrong sending that — please try again, or
+                      email us directly at{" "}
+                      <span className="font-medium">
+                        {contactInformation.email}
+                      </span>
+                      .
+                    </p>
+                  )}
+
                   <button
                     type="submit"
-                    className="label group mt-10 inline-flex items-center gap-2 rounded-full bg-copper px-6 py-3.5 text-cream transition-colors hover:bg-charcoal"
+                    disabled={status === "submitting"}
+                    className="label group mt-10 inline-flex items-center gap-2 rounded-full bg-copper px-6 py-3.5 text-cream transition-colors hover:bg-charcoal disabled:opacity-60"
                   >
-                    Send Project Details
+                    {status === "submitting" ? "Sending…" : "Send Project Details"}
                     <span aria-hidden className="transition-transform group-hover:translate-x-0.5">
                       →
                     </span>
