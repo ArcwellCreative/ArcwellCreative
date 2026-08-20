@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { navigation } from "@/lib/site-config";
+import { handleHashLinkClick } from "@/lib/scroll";
 import { HoverTilt } from "./HoverTilt";
 
 export function Header() {
@@ -38,6 +39,7 @@ export function Header() {
         >
           <Link
             href="#top"
+            onClick={(e) => handleHashLinkClick(e, "#top")}
             className="flex items-center gap-2 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4"
             aria-label="Arcwell Creative — home"
           >
@@ -59,6 +61,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
+                onClick={(e) => handleHashLinkClick(e, item.href)}
                 className="label text-cream/70 transition-colors hover:text-cream"
               >
                 <HoverTilt>{item.label}</HoverTilt>
@@ -69,6 +72,7 @@ export function Header() {
           <div className="flex items-center gap-2">
             <Link
               href="#contact"
+              onClick={(e) => handleHashLinkClick(e, "#contact")}
               className="label hidden rounded-full bg-cream px-5 py-2.5 text-ink transition-colors hover:bg-copper hover:text-cream sm:inline-flex"
             >
               Start a Project
@@ -112,7 +116,10 @@ export function Header() {
                 >
                   <Link
                     href={item.href}
-                    onClick={() => setOpen(false)}
+                    onClick={(e) => {
+                      handleHashLinkClick(e, item.href);
+                      setOpen(false);
+                    }}
                     className="text-h2 font-medium tracking-tight text-cream"
                   >
                     {item.label}
@@ -127,7 +134,10 @@ export function Header() {
               >
                 <Link
                   href="#contact"
-                  onClick={() => setOpen(false)}
+                  onClick={(e) => {
+                    handleHashLinkClick(e, "#contact");
+                    setOpen(false);
+                  }}
                   className="label inline-flex rounded-full bg-copper px-6 py-3.5 text-cream"
                 >
                   Start a Project

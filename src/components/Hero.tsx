@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { fadeUp, viewportOnce } from "@/lib/motion";
+import { handleHashLinkClick } from "@/lib/scroll";
 import { Typewriter } from "./Typewriter";
 import { BrowserMockup } from "./mockups/BrowserMockup";
 import { PosterMockup } from "./mockups/PosterMockup";
@@ -94,6 +95,7 @@ export function Hero() {
             <div className="flex flex-wrap items-center gap-4">
               <Link
                 href="#contact"
+                onClick={(e) => handleHashLinkClick(e, "#contact")}
                 className="label group inline-flex items-center gap-2 rounded-full bg-copper px-6 py-3.5 text-cream transition-colors hover:bg-copper-light"
               >
                 Start a Project
@@ -103,6 +105,7 @@ export function Hero() {
               </Link>
               <Link
                 href="#services"
+                onClick={(e) => handleHashLinkClick(e, "#services")}
                 className="label group inline-flex items-center gap-2 rounded-full border border-cream/25 px-6 py-3.5 text-cream transition-colors hover:border-cream hover:bg-cream/10"
               >
                 Explore Our Services

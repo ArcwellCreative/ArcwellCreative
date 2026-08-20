@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { navigation, socialLinks } from "@/lib/site-config";
+import { handleHashLinkClick } from "@/lib/scroll";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -29,6 +32,7 @@ export function Footer() {
               <Link
                 key={item.href}
                 href={item.href}
+                onClick={(e) => handleHashLinkClick(e, item.href)}
                 className="label text-cream/55 transition-colors hover:text-cream"
               >
                 {item.label}

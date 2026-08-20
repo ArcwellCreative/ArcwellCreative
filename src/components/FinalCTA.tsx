@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { handleHashLinkClick } from "@/lib/scroll";
 import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
 
@@ -26,6 +29,7 @@ export function FinalCTA() {
           <div className="mt-12 flex flex-wrap items-center gap-4">
             <Link
               href="#contact"
+              onClick={(e) => handleHashLinkClick(e, "#contact")}
               className="label group inline-flex items-center gap-2 rounded-full bg-copper px-6 py-3.5 text-cream transition-colors hover:bg-charcoal"
             >
               Start a Project
@@ -35,6 +39,7 @@ export function FinalCTA() {
             </Link>
             <Link
               href="#contact"
+              onClick={(e) => handleHashLinkClick(e, "#contact")}
               className="label inline-flex items-center gap-2 rounded-full border border-charcoal/25 px-6 py-3.5 text-charcoal transition-colors hover:border-charcoal/60"
             >
               Request a Free Concept

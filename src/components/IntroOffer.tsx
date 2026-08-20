@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { handleHashLinkClick } from "@/lib/scroll";
 import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
 
@@ -30,6 +33,7 @@ export function IntroOffer() {
             <div className="flex flex-col items-start gap-4 lg:items-end">
               <Link
                 href="#contact"
+                onClick={(e) => handleHashLinkClick(e, "#contact")}
                 className="label group inline-flex items-center gap-2 rounded-full bg-copper px-6 py-3.5 text-cream transition-colors hover:bg-copper-light"
               >
                 Request a Free Concept
