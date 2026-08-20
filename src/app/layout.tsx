@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   title: "Arcwell Creative | Web Design, Branding & Graphic Design",
   description: siteConfig.description,
   icons: {
-    icon: "/arcwell-icon.svg",
+    icon: "/arcwell-icon.png",
   },
   openGraph: {
     title: "Arcwell Creative | Web Design, Branding & Graphic Design",
