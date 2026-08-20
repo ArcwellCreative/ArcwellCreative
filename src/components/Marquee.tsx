@@ -19,11 +19,11 @@ function MarqueeSet() {
       {PHRASES.map((phrase, i) => (
         <span key={i} className="flex shrink-0 items-center">
           <span
-            className={`mx-4 shrink-0 cursor-default select-none text-[3.5rem] leading-none text-cream opacity-[0.07] transition-[opacity,text-shadow] duration-500 hover:opacity-90 hover:[text-shadow:0_0_40px_rgba(181,107,60,0.55)] sm:text-[5rem] lg:text-[6.5rem] ${phrase.className}`}
+            className={`mx-3 shrink-0 cursor-default select-none text-[1.05rem] leading-none text-cream opacity-[0.16] transition-[opacity,text-shadow] duration-500 hover:opacity-90 hover:[text-shadow:0_0_18px_rgba(181,107,60,0.55)] sm:text-[1.3rem] ${phrase.className}`}
           >
             {phrase.text}
           </span>
-          <span className="mx-4 shrink-0 text-[3.5rem] text-copper-light opacity-30 sm:text-[5rem] lg:text-[6.5rem]">
+          <span className="mx-3 shrink-0 text-[1.05rem] text-copper-light opacity-40 sm:text-[1.3rem]">
             •
           </span>
         </span>
@@ -34,11 +34,11 @@ function MarqueeSet() {
 
 export function Marquee() {
   return (
-    <section className="overflow-hidden border-t border-cream/10 bg-ink py-10 sm:py-14">
+    <div className="overflow-hidden">
       <div className="flex w-max animate-marquee will-change-transform">
         <MarqueeSet />
         <MarqueeSet />
       </div>
-    </section>
+    </div>
   );
 }
