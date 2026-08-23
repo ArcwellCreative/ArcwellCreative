@@ -58,7 +58,7 @@ export function Services() {
                     {service.number}
                   </span>
                   <span
-                    className={`flex-1 text-xl font-medium uppercase tracking-wide transition-colors sm:text-2xl ${
+                    className={`flex-1 text-xl font-bold uppercase tracking-wide transition-colors sm:text-2xl ${
                       isOpen ? "text-cream" : "text-cream/65"
                     }`}
                   >
