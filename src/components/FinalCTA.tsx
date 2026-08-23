@@ -4,18 +4,16 @@ import Link from "next/link";
 import { handleHashLinkClick } from "@/lib/scroll";
 import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
-import { SectionArcs } from "./SectionArcs";
 
 export function FinalCTA() {
   return (
-    <section className="relative overflow-hidden border-t border-cream/10 bg-ink py-28 sm:py-36">
-      <SectionArcs corner="top-right" tone="dark" />
-      <div className="container-arc relative">
+    <section className="border-t border-cream/10 bg-ink py-28 sm:py-36">
+      <div className="container-arc">
         <Reveal>
           <SectionLabel>Let&apos;s Work Together</SectionLabel>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="text-h1 mt-8 max-w-4xl font-medium tracking-tight text-cream">
+          <h2 className="text-h1 mt-8 max-w-4xl font-display font-extrabold uppercase tracking-tight text-cream">
             Your business already does good work. Let&apos;s make it look
             that way.
           </h2>

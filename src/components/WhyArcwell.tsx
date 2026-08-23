@@ -1,20 +1,18 @@
 import { whyArcwell } from "@/lib/site-config";
 import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
-import { SectionArcs } from "./SectionArcs";
 
 export function WhyArcwell() {
   return (
-    <section className="relative overflow-hidden border-t border-cream/10 bg-charcoal py-28 sm:py-36">
-      <SectionArcs corner="bottom-right" tone="dark" />
-      <div className="container-arc relative">
+    <section className="border-t border-cream/10 bg-charcoal py-28 sm:py-36">
+      <div className="container-arc">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-4">
             <Reveal>
               <SectionLabel>Why Arcwell</SectionLabel>
             </Reveal>
             <Reveal delay={0.1}>
-              <h2 className="text-h2 mt-6 font-medium tracking-tight text-cream">
+              <h2 className="text-h2 mt-6 font-display font-bold uppercase tracking-tight text-cream">
                 Design that works for the business, not just the portfolio.
               </h2>
             </Reveal>
@@ -24,7 +22,7 @@ export function WhyArcwell() {
             {whyArcwell.map((item, i) => (
               <Reveal key={item.title} delay={0.08 * i}>
                 <div className="border-t border-cream/15 pt-6">
-                  <h3 className="text-h3 font-medium tracking-tight text-cream">
+                  <h3 className="text-h3 font-display font-bold uppercase tracking-tight text-cream">
                     {item.title}
                   </h3>
                   <p className="text-body mt-3 text-cream/65">
