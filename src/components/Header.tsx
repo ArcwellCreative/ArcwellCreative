@@ -71,6 +71,12 @@ export function Header() {
 
           <div className="flex items-center gap-2">
             <Link
+              href="/free-concept"
+              className="label hidden rounded-full border border-cream/25 px-5 py-2.5 text-cream transition-colors hover:border-cream hover:bg-cream/10 lg:inline-flex"
+            >
+              Free Concept
+            </Link>
+            <Link
               href="#contact"
               onClick={(e) => handleHashLinkClick(e, "#contact")}
               className="label hidden rounded-full bg-cream px-5 py-2.5 text-ink transition-colors hover:bg-copper hover:text-cream sm:inline-flex"
@@ -130,7 +136,7 @@ export function Header() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.08 * navigation.length, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="mt-8"
+                className="mt-8 flex flex-wrap items-center gap-3"
               >
                 <Link
                   href="#contact"
@@ -141,6 +147,13 @@ export function Header() {
                   className="label inline-flex rounded-full bg-copper px-6 py-3.5 text-cream"
                 >
                   Start a Project
+                </Link>
+                <Link
+                  href="/free-concept"
+                  onClick={() => setOpen(false)}
+                  className="label inline-flex rounded-full border border-cream/25 px-6 py-3.5 text-cream"
+                >
+                  Free Concept
                 </Link>
               </motion.div>
             </motion.nav>

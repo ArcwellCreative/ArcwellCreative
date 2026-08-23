@@ -39,13 +39,6 @@ export function FinalCTA() {
                 →
               </span>
             </Link>
-            <Link
-              href="#contact"
-              onClick={(e) => handleHashLinkClick(e, "#contact")}
-              className="label inline-flex items-center gap-2 rounded-full border border-cream/25 px-6 py-3.5 text-cream transition-colors hover:border-cream hover:bg-cream/10"
-            >
-              Request a Free Concept
-            </Link>
           </div>
         </Reveal>
       </div>
