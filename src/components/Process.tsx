@@ -10,7 +10,7 @@ export function Process() {
           <SectionLabel>Our Process</SectionLabel>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="text-h2 mt-6 max-w-xl font-medium tracking-tight text-cream">
+          <h2 className="text-h2 mt-6 max-w-xl font-display font-bold uppercase tracking-tight text-cream">
             A clear path from first conversation to finished work.
           </h2>
         </Reveal>
@@ -20,7 +20,7 @@ export function Process() {
             <Reveal key={step.number} delay={0.1 * i}>
               <div className="border-t border-cream/15 pt-6">
                 <span className="label text-copper-light">{step.number}</span>
-                <h3 className="text-h3 mt-4 font-medium tracking-tight text-cream">
+                <h3 className="text-h3 mt-4 font-display font-bold uppercase tracking-tight text-cream">
                   {step.title}
                 </h3>
                 <p className="text-body mt-3 max-w-[24ch] text-cream/65">

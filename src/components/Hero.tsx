@@ -95,7 +95,7 @@ export function Hero() {
             animate="visible"
             variants={fadeUp}
             transition={{ delay: 0.15 }}
-            className="text-h2 font-medium leading-[1.03] tracking-tight text-cream lg:col-span-7"
+            className="text-h2 font-display font-extrabold uppercase leading-[1.03] tracking-tight text-cream lg:col-span-7"
           >
             We make businesses{" "}
             <span className="text-copper-light">impossible</span> to overlook.

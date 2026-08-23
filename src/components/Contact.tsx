@@ -95,7 +95,7 @@ export function Contact() {
               <SectionLabel light>Start a Project</SectionLabel>
             </Reveal>
             <Reveal delay={0.1}>
-              <h2 className="text-h2 mt-6 font-medium tracking-tight text-charcoal">
+              <h2 className="text-h2 mt-6 font-display font-bold uppercase tracking-tight text-charcoal">
                 Tell us about your business.
               </h2>
             </Reveal>
@@ -110,7 +110,7 @@ export function Contact() {
             {status === "success" ? (
               <Reveal>
                 <div className="border-t border-charcoal/15 py-16">
-                  <p className="text-h3 font-medium tracking-tight text-charcoal">
+                  <p className="text-h3 font-display font-bold uppercase tracking-tight text-charcoal">
                     Thanks — we&apos;ve got your project details.
                   </p>
                   <p className="text-body mt-3 max-w-md text-charcoal/55">

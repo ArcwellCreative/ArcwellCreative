@@ -9,7 +9,7 @@ export function BrandStatement() {
           <SectionLabel>Why It Matters</SectionLabel>
         </Reveal>
         <Reveal delay={0.1}>
-          <p className="text-h1 mt-8 max-w-4xl font-medium tracking-tight text-cream">
+          <p className="text-h1 mt-8 max-w-4xl font-display font-extrabold uppercase tracking-tight text-cream">
             Great businesses shouldn&apos;t be held back by forgettable
             design.
           </p>

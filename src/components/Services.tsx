@@ -28,7 +28,7 @@ export function Services() {
           <SectionLabel>Services</SectionLabel>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="text-h2 mt-6 max-w-2xl font-medium tracking-tight text-cream">
+          <h2 className="text-h2 mt-6 max-w-2xl font-display font-bold uppercase tracking-tight text-cream">
             Everything your business needs to look the part.
           </h2>
         </Reveal>

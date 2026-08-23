@@ -17,7 +17,7 @@ export function SelectedWork() {
               <SectionLabel>Selected Concepts</SectionLabel>
             </Reveal>
             <Reveal delay={0.1}>
-              <h2 className="text-h2 mt-6 max-w-lg font-medium tracking-tight text-cream">
+              <h2 className="text-h2 mt-6 max-w-lg font-display font-bold uppercase tracking-tight text-cream">
                 Concept work that shows the range.
               </h2>
             </Reveal>
@@ -50,7 +50,7 @@ export function SelectedWork() {
                 </div>
                 <div className="mt-5 flex items-start justify-between gap-4 border-t border-cream/10 pt-5">
                   <div>
-                    <p className="text-h3 font-medium tracking-tight text-cream">
+                    <p className="text-h3 font-display font-bold uppercase tracking-tight text-cream">
                       {project.category}
                     </p>
                     <p className="text-body mt-1.5 text-cream/60">

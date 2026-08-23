@@ -120,7 +120,7 @@ export function Header() {
                       handleHashLinkClick(e, item.href);
                       setOpen(false);
                     }}
-                    className="text-h2 font-medium tracking-tight text-cream"
+                    className="text-h2 font-display font-bold uppercase tracking-tight text-cream"
                   >
                     {item.label}
                   </Link>
