@@ -13,9 +13,11 @@ export function FinalCTA() {
           <SectionLabel>Let&apos;s Work Together</SectionLabel>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="text-h1 mt-8 max-w-4xl font-display font-extrabold uppercase tracking-tight text-cream">
-            Your business already does good work. Let&apos;s make it look
-            that way.
+          <h2 className="text-h1 mt-8 max-w-4xl font-display font-medium tracking-tight text-cream">
+            Your business already does good work.{" "}
+            <span className="font-extrabold text-copper-light">
+              Let&apos;s make it look that way.
+            </span>
           </h2>
         </Reveal>
         <Reveal delay={0.2}>

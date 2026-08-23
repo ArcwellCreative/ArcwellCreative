@@ -15,8 +15,9 @@ export function IntroOffer() {
               <SectionLabel>Complimentary Concept</SectionLabel>
             </Reveal>
             <Reveal delay={0.1}>
-              <h2 className="text-h1 mt-6 font-display font-extrabold uppercase tracking-tight text-cream">
-                Curious what your business could look like?
+              <h2 className="text-h1 mt-8 font-display font-extrabold uppercase tracking-tight text-cream">
+                Curious what <span className="text-copper-light">your business</span> could
+                look like?
               </h2>
             </Reveal>
             <Reveal delay={0.2}>

@@ -12,8 +12,11 @@ export function WhyArcwell() {
               <SectionLabel>Why Arcwell</SectionLabel>
             </Reveal>
             <Reveal delay={0.1}>
-              <h2 className="text-h2 mt-6 font-display font-bold uppercase tracking-tight text-cream">
-                Design that works for the business, not just the portfolio.
+              <h2 className="text-h2 mt-6 font-display font-medium tracking-tight text-cream">
+                Design that works for the business,{" "}
+                <span className="font-extrabold text-copper-light">
+                  not just the portfolio.
+                </span>
               </h2>
             </Reveal>
           </div>

@@ -10,8 +10,9 @@ export function Process() {
           <SectionLabel>Our Process</SectionLabel>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="text-h2 mt-6 max-w-xl font-display font-bold uppercase tracking-tight text-cream">
-            A clear path from first conversation to finished work.
+          <h2 className="text-h2 mt-6 max-w-xl font-display font-medium tracking-tight text-cream">
+            A clear path from first conversation to{" "}
+            <span className="font-extrabold text-copper-light">finished work.</span>
           </h2>
         </Reveal>
 

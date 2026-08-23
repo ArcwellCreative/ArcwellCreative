@@ -13,10 +13,12 @@ export function About() {
           </div>
           <div className="lg:col-span-8">
             <Reveal>
-              <h2 className="text-h2 font-display font-bold uppercase leading-[1.15] tracking-tight text-cream">
+              <h2 className="text-h2 font-display font-medium leading-[1.15] tracking-tight text-cream">
                 Arcwell Creative is an independent creative studio built
-                around one idea: good design shouldn&apos;t be reserved for
-                massive brands.
+                around one idea:{" "}
+                <span className="font-serif-italic italic text-copper-light">
+                  good design shouldn&apos;t be reserved for massive brands.
+                </span>
               </h2>
             </Reveal>
             <Reveal delay={0.15}>
