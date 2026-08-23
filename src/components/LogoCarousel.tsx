@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 
 const LOGOS = [
-  { src: "/logos/birrias.png", alt: "Birria's Mexican Food & Bar logo" },
   { src: "/logos/period.png", alt: "Period podcast logo" },
   { src: "/logos/forever-is-officially-over.png", alt: "Forever Is Officially Over infinity logo" },
   { src: "/logos/apple-cider-bakers.png", alt: "Apple Cider Bakers logo" },
