@@ -38,7 +38,7 @@ export const services = [
     number: "02",
     title: "Brand Identity",
     description:
-      "Logos, typography, colors, and visual systems designed to make businesses recognizable.",
+      "Custom logo design and logo rebranding that gives your business a mark it can grow into.",
   },
   {
     number: "03",
@@ -51,12 +51,6 @@ export const services = [
     title: "Print & Business Materials",
     description:
       "Business cards, flyers, signage concepts, menus, and other branded collateral.",
-  },
-  {
-    number: "05",
-    title: "Creative Support",
-    description:
-      "Ongoing design support for businesses that regularly need new creative assets.",
   },
 ];
 
