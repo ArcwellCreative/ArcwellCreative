@@ -41,9 +41,9 @@ export function Hero() {
     setTimeout(() => {
       document.getElementById("services")?.scrollIntoView({ behavior: "auto", block: "start" });
       history.pushState(null, "", "#services");
-    }, 360);
+    }, 190);
 
-    setTimeout(() => setZoomOrigin(null), 950);
+    setTimeout(() => setZoomOrigin(null), 560);
   }
 
   return (
@@ -187,7 +187,7 @@ export function Hero() {
             style={{ left: zoomOrigin.x, top: zoomOrigin.y, x: "-50%", y: "-50%" }}
             initial={{ width: 16, height: 16, opacity: 0.92 }}
             animate={{ width: "300vmax", height: "300vmax", opacity: [0.92, 1, 1, 0] }}
-            transition={{ duration: 0.95, ease: EASE_OUT_EXPO, opacity: { duration: 0.95, times: [0, 0.38, 0.62, 1] } }}
+            transition={{ duration: 0.56, ease: EASE_OUT_EXPO, opacity: { duration: 0.56, times: [0, 0.32, 0.58, 1] } }}
           />
         )}
       </AnimatePresence>
