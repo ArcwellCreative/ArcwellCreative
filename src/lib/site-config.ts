@@ -21,10 +21,17 @@ export const contactInformation = {
   location: "Based in the U.S. — working with local businesses everywhere.",
 };
 
-// REPLACE WITH REAL ARCWELL SOCIAL LINKS WHEN AVAILABLE
-export const socialLinks: { label: string; href: string }[] = [
-  // { label: "Instagram", href: "https://instagram.com/YOUR_HANDLE" },
-  // { label: "LinkedIn", href: "https://linkedin.com/company/YOUR_COMPANY" },
+export const socialLinks: { label: string; href: string; icon: "facebook" | "instagram" }[] = [
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/profile.php?id=61593695493149",
+    icon: "facebook",
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/arcwellcreative",
+    icon: "instagram",
+  },
 ];
 
 export const services = [

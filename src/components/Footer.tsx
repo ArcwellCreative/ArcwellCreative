@@ -5,6 +5,46 @@ import Link from "next/link";
 import { contactInformation, navigation, socialLinks } from "@/lib/site-config";
 import { handleHashLinkClick } from "@/lib/scroll";
 
+function FacebookIcon(props: { size: number }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width={props.size}
+      height={props.size}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.75}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+    </svg>
+  );
+}
+
+function InstagramIcon(props: { size: number }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width={props.size}
+      height={props.size}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.75}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <path d="M17.5 6.5h.01" />
+    </svg>
+  );
+}
+
+const SOCIAL_ICONS = { facebook: FacebookIcon, instagram: InstagramIcon };
+
 // Lean placeholder wireframe globe, arc-motif rings echoing the logo mark —
 // swap for a real illustration/reference later
 function SpinningGlobe() {
@@ -74,20 +114,23 @@ export function Footer() {
             ))}
           </nav>
 
-          {/* REPLACE WITH REAL ARCWELL SOCIAL LINKS — currently none configured */}
           {socialLinks.length > 0 && (
-            <div className="flex gap-6">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.href}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="label text-cream/65 transition-colors hover:text-cream"
-                >
-                  {social.label}
-                </a>
-              ))}
+            <div className="flex gap-3">
+              {socialLinks.map((social) => {
+                const Icon = SOCIAL_ICONS[social.icon];
+                return (
+                  <a
+                    key={social.href}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-cream/15 text-cream/65 transition-colors hover:border-cream/40 hover:text-cream"
+                  >
+                    <Icon size={17} />
+                  </a>
+                );
+              })}
             </div>
           )}
         </div>
