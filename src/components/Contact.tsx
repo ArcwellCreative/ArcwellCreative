@@ -16,11 +16,31 @@ export function Contact() {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [showCallback, setShowCallback] = useState(false);
   const [callbackStatus, setCallbackStatus] = useState<FormStatus>("idle");
+  const [selectedServices, setSelectedServices] = useState<string[]>([]);
+  const [otherText, setOtherText] = useState("");
+  const [serviceError, setServiceError] = useState(false);
+
+  function toggleService(option: string) {
+    setSelectedServices((prev) =>
+      prev.includes(option) ? prev.filter((s) => s !== option) : [...prev, option]
+    );
+    setServiceError(false);
+  }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
+
+    const chosen = selectedServices.map((s) =>
+      s === "Other" && otherText.trim() ? `Other: ${otherText.trim()}` : s
+    );
+    if (chosen.length === 0) {
+      setServiceError(true);
+      return;
+    }
+
     const data = new FormData(form);
+    data.set("service", chosen.join(", "));
     data.set("_subject", `New project inquiry — ${data.get("business") || data.get("name")}`);
 
     setStatus("submitting");
@@ -34,6 +54,8 @@ export function Contact() {
       if (!response.ok) throw new Error("Submission failed");
       setStatus("success");
       form.reset();
+      setSelectedServices([]);
+      setOtherText("");
     } catch {
       setStatus("error");
     }
@@ -130,19 +152,53 @@ export function Contact() {
                       <input id="phone" name="phone" type="tel" className={`mt-2 ${inputClass}`} />
                     </div>
                     <div className="sm:col-span-2">
-                      <label htmlFor="service" className="label text-charcoal/50">
-                        What do you need?
-                      </label>
-                      <select id="service" name="service" required defaultValue="" className={`mt-2 ${inputClass}`}>
-                        <option value="" disabled>
-                          Select a service
-                        </option>
-                        {serviceOptions.map((option) => (
-                          <option key={option} value={option}>
-                            {option}
-                          </option>
-                        ))}
-                      </select>
+                      <fieldset>
+                        <legend className="label text-charcoal/50">
+                          What do you need?{" "}
+                          <span className="normal-case text-charcoal/35">(select all that apply)</span>
+                        </legend>
+                        <div className="mt-3 flex flex-col gap-3">
+                          {serviceOptions.map((option) => (
+                            <label
+                              key={option}
+                              className="flex cursor-pointer items-center gap-2.5 text-charcoal/80"
+                            >
+                              <input
+                                type="checkbox"
+                                checked={selectedServices.includes(option)}
+                                onChange={() => toggleService(option)}
+                                className="h-4 w-4 accent-copper"
+                              />
+                              {option}
+                            </label>
+                          ))}
+                          <label className="flex cursor-pointer items-center gap-2.5 text-charcoal/80">
+                            <input
+                              type="checkbox"
+                              checked={selectedServices.includes("Other")}
+                              onChange={() => toggleService("Other")}
+                              className="h-4 w-4 accent-copper"
+                            />
+                            Other
+                          </label>
+                        </div>
+
+                        {selectedServices.includes("Other") && (
+                          <input
+                            type="text"
+                            value={otherText}
+                            onChange={(e) => setOtherText(e.target.value)}
+                            placeholder="What do you need? Tell us and we'll let you know if we can help."
+                            className={`mt-3 ${inputClass}`}
+                          />
+                        )}
+
+                        {serviceError && (
+                          <p className="mt-2 text-sm text-copper">
+                            Pick at least one — or check Other and tell us what you need.
+                          </p>
+                        )}
+                      </fieldset>
                     </div>
                     <div className="sm:col-span-2">
                       <label htmlFor="details" className="label text-charcoal/50">

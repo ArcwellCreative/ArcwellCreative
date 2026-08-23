@@ -137,6 +137,4 @@ export const serviceOptions = [
   "Logo / Branding",
   "Graphic Advertisement",
   "Business Cards / Print",
-  "Multiple Services",
-  "Something Else",
 ];
