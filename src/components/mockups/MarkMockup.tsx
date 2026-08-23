@@ -38,10 +38,10 @@ export function MarkMockup({ className }: { className?: string }) {
 
   return (
     <div
-      className={`relative flex h-full w-full flex-col justify-between overflow-hidden rounded-[10px] border border-cream/10 bg-ink p-5 ${className ?? ""}`}
+      className={`relative flex h-full w-full flex-col overflow-hidden rounded-[10px] border border-cream/10 bg-ink p-5 ${className ?? ""}`}
     >
       <span className="label text-cream/60">Brand Mark</span>
-      <div className="relative mx-auto h-16 w-full sm:h-20">
+      <div className="relative mt-2 min-h-0 flex-1">
         <AnimatePresence>
           {currentSrc && (
             // eslint-disable-next-line @next/next/no-img-element -- client-generated data URI, not a static asset
@@ -53,15 +53,20 @@ export function MarkMockup({ className }: { className?: string }) {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 1.06, y: -6 }}
               transition={{ duration: 0.55, ease: EASE_OUT_EXPO }}
-              className="absolute inset-0 h-full w-full object-contain"
+              className="absolute inset-0 h-full w-full object-contain p-1"
             />
           )}
         </AnimatePresence>
       </div>
-      <div className="flex items-center gap-2">
-        <span className="h-3 w-3 rounded-full bg-copper" />
-        <span className="h-3 w-3 rounded-full bg-cream/80" />
-        <span className="h-3 w-3 rounded-full bg-charcoal border border-cream/20" />
+      <div className="mt-3 flex items-center gap-1.5">
+        {SERVICE_LOGOS.map((logo, i) => (
+          <span
+            key={logo.src}
+            className={`h-1.5 rounded-full transition-all duration-500 ${
+              i === index ? "w-4 bg-copper-light" : "w-1.5 bg-cream/20"
+            }`}
+          />
+        ))}
       </div>
     </div>
   );
