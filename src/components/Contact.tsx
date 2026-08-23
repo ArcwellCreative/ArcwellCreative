@@ -213,18 +213,6 @@ export function Contact() {
                         className={`mt-2 ${inputClass}`}
                       />
                     </div>
-                    <div className="sm:col-span-2">
-                      <label htmlFor="details" className="label text-charcoal/50">
-                        Tell us about your project
-                      </label>
-                      <textarea
-                        id="details"
-                        name="details"
-                        required
-                        rows={4}
-                        className={`mt-2 resize-none ${inputClass}`}
-                      />
-                    </div>
                   </div>
 
                   {status === "error" && (
