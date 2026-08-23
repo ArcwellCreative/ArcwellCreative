@@ -23,7 +23,7 @@ export function FinalCTA() {
         <Reveal delay={0.2}>
           <p className="text-body-lg mt-8 max-w-lg text-cream/70">
             Whether you need a new website, a stronger logo, better
-            advertising, or a complete visual refresh, let&apos;s build
+            social marketing, or a complete visual refresh, let&apos;s build
             something you&apos;re proud to put your name on.
           </p>
         </Reveal>

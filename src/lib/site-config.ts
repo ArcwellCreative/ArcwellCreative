@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Arcwell Creative",
   tagline: "Independent Creative Studio",
   description:
-    "Arcwell Creative creates websites, branding, advertisements, and professional visual design for local and growing businesses.",
+    "Arcwell Creative creates websites, branding, social marketing, and professional visual design for local and growing businesses.",
   url: "https://arcwellcreative.com",
 };
 
@@ -42,9 +42,9 @@ export const services = [
   },
   {
     number: "03",
-    title: "Graphic Advertising",
+    title: "Social Marketing",
     description:
-      "Professional digital advertisements designed for campaigns, screens, social media, and promotions.",
+      "Scroll-stopping content and ad campaigns built to grow your following and bring in customers.",
   },
   {
     number: "04",
@@ -65,7 +65,7 @@ export const projects = [
   {
     number: "02",
     category: "Automotive",
-    discipline: "Advertising + Digital Design",
+    discipline: "Social Marketing + Digital Design",
     kind: "poster" as const,
   },
   {
@@ -122,7 +122,7 @@ export const whyArcwell = [
   {
     title: "One Creative Partner",
     description:
-      "Website, branding, advertising, and print can all live under one visual direction.",
+      "Website, branding, social marketing, and print can all live under one visual direction.",
   },
   {
     title: "Built for Real Businesses",
@@ -135,6 +135,6 @@ export const serviceOptions = [
   "Website",
   "Website Redesign",
   "Logo / Branding",
-  "Graphic Advertisement",
+  "Social Marketing",
   "Business Cards / Print",
 ];

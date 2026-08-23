@@ -13,7 +13,7 @@ export function PosterMockup({ className }: { className?: string }) {
         </p>
       </div>
       <div className="h-px w-full bg-cream/30" />
-      <span className="label text-cream/70">Advertising</span>
+      <span className="label text-cream/70">Social Marketing</span>
     </div>
   );
 }

@@ -16,7 +16,7 @@ const EASE_OUT_EXPO = [0.16, 1, 0.3, 1] as const;
 
 const cards = [
   { Comp: BrowserMockup, label: "Web Design", rotate: -4, y: 0 },
-  { Comp: PosterMockup, label: "Advertising", rotate: -1, y: -10 },
+  { Comp: PosterMockup, label: "Social Marketing", rotate: -1, y: -10 },
   { Comp: MarkMockup, label: "Branding", rotate: 2, y: 2, serviceIndex: 1 },
   { Comp: GridMockup, label: "Print Design", rotate: 5, y: -6 },
 ];
@@ -109,7 +109,7 @@ export function Hero() {
             className="flex flex-col gap-8 lg:col-span-5"
           >
             <p className="text-body-lg max-w-md text-cream/75">
-              Arcwell Creative builds websites, brands, advertisements, and
+              Arcwell Creative builds websites, brands, social marketing, and
               visual identities for businesses ready to look their best.
             </p>
             <div className="flex flex-wrap items-center gap-4">

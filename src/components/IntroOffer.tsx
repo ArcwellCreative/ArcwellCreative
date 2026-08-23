@@ -23,7 +23,7 @@ export function IntroOffer() {
               <p className="text-body-lg mt-8 max-w-lg text-cream/70">
                 We&apos;re currently selecting local businesses for
                 complimentary design concepts. Send us your current website,
-                logo, or advertisement and we&apos;ll show you what
+                logo, or social media and we&apos;ll show you what
                 we&apos;d improve.
               </p>
             </Reveal>

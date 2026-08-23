@@ -154,7 +154,7 @@ export function Contact() {
                     <div className="sm:col-span-2">
                       <fieldset>
                         <legend className="label text-charcoal/50">
-                          What do you need?{" "}
+                          How can we help?{" "}
                           <span className="normal-case text-charcoal/35">(select all that apply)</span>
                         </legend>
                         <div className="mt-3 flex flex-col gap-3">
@@ -188,7 +188,7 @@ export function Contact() {
                             type="text"
                             value={otherText}
                             onChange={(e) => setOtherText(e.target.value)}
-                            placeholder="What do you need? Tell us and we'll let you know if we can help."
+                            placeholder="Tell us what you're looking for and we'll let you know if we can help."
                             className={`mt-3 ${inputClass}`}
                           />
                         )}
