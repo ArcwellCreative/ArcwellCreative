@@ -201,6 +201,19 @@ export function Contact() {
                       </fieldset>
                     </div>
                     <div className="sm:col-span-2">
+                      <label htmlFor="heardAbout" className="label text-charcoal/50">
+                        How did you hear about us?{" "}
+                        <span className="normal-case text-charcoal/35">(optional)</span>
+                      </label>
+                      <input
+                        id="heardAbout"
+                        name="heardAbout"
+                        type="text"
+                        placeholder="e.g. a friend, a sales call, Google..."
+                        className={`mt-2 ${inputClass}`}
+                      />
+                    </div>
+                    <div className="sm:col-span-2">
                       <label htmlFor="details" className="label text-charcoal/50">
                         Tell us about your project
                       </label>
