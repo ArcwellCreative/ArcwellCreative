@@ -6,6 +6,7 @@ import { services } from "@/lib/site-config";
 import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
 import { Typewriter } from "./Typewriter";
+import { LogoCarousel } from "./LogoCarousel";
 
 export function Services() {
   const [openIndex, setOpenIndex] = useState(0);
@@ -74,9 +75,12 @@ export function Services() {
                       transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
                     >
-                      <p className="text-body-lg max-w-lg pb-8 pl-0 text-cream/65 sm:pb-10 sm:pl-[3.75rem]">
-                        <Typewriter text={service.description} speed={14} startDelay={100} />
-                      </p>
+                      <div className="max-w-lg pb-8 pl-0 sm:pb-10 sm:pl-[3.75rem]">
+                        <p className="text-body-lg text-cream/65">
+                          <Typewriter text={service.description} speed={14} startDelay={100} />
+                        </p>
+                        {service.title === "Logo Creation" && <LogoCarousel />}
+                      </div>
                     </motion.div>
                   )}
                 </AnimatePresence>

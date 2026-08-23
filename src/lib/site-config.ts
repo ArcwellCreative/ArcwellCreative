@@ -36,7 +36,7 @@ export const services = [
   },
   {
     number: "02",
-    title: "Brand Identity",
+    title: "Logo Creation",
     description:
       "Custom logo design and logo rebranding that gives your business a mark it can grow into.",
   },
