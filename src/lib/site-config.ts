@@ -18,7 +18,7 @@ export const navigation = [
 export const contactInformation = {
   email: "arcwellcreative@gmail.com",
   phone: "YOUR_PHONE_HERE",
-  location: "Based in Chicago — working with businesses everywhere.",
+  location: "Based in the U.S. — working with local businesses everywhere.",
 };
 
 // REPLACE WITH REAL ARCWELL SOCIAL LINKS WHEN AVAILABLE

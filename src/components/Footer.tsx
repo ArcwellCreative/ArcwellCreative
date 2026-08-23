@@ -1,38 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { contactInformation, navigation, socialLinks } from "@/lib/site-config";
 import { handleHashLinkClick } from "@/lib/scroll";
-
-// REPLACE America/Chicago if Arcwell's real base timezone differs
-function formatChicagoTime() {
-  return new Intl.DateTimeFormat("en-US", {
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-    hour12: true,
-    timeZone: "America/Chicago",
-    timeZoneName: "short",
-  }).format(new Date());
-}
-
-function useLiveTime() {
-  const [time, setTime] = useState<string | null>(null);
-
-  useEffect(() => {
-    const tick = () => setTime(formatChicagoTime());
-    const start = setTimeout(tick, 0);
-    const id = setInterval(tick, 1000);
-    return () => {
-      clearTimeout(start);
-      clearInterval(id);
-    };
-  }, []);
-
-  return time;
-}
 
 // Lean placeholder wireframe globe, arc-motif rings echoing the logo mark —
 // swap for a real illustration/reference later
@@ -62,7 +33,6 @@ function SpinningGlobe() {
 
 export function Footer() {
   const year = new Date().getFullYear();
-  const time = useLiveTime();
 
   return (
     <footer className="bg-ink py-16 sm:py-20">
@@ -82,14 +52,12 @@ export function Footer() {
               out.
             </p>
             <p className="text-body mt-2 max-w-[26ch] text-cream/60">
-              Chicago-based. Globally driven. Shaping what&apos;s next in
+              Local roots, national reach. Shaping what&apos;s next in
               creativity.
             </p>
             <div className="mt-4 flex items-center gap-2.5">
               <SpinningGlobe />
-              <span className="label text-cream/60">
-                Chicago, IL{time ? ` · ${time}` : ""}
-              </span>
+              <span className="label text-cream/60">United States</span>
             </div>
           </div>
 

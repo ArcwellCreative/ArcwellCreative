@@ -10,8 +10,12 @@ const inputClass =
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xzepykbb";
 
+type FormStatus = "idle" | "submitting" | "success" | "error";
+
 export function Contact() {
-  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [showCallback, setShowCallback] = useState(false);
+  const [callbackStatus, setCallbackStatus] = useState<FormStatus>("idle");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -32,6 +36,31 @@ export function Contact() {
       form.reset();
     } catch {
       setStatus("error");
+    }
+  }
+
+  async function handleCallbackSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    data.set(
+      "_subject",
+      `Call back request — ${data.get("name") || data.get("phone")}`,
+    );
+
+    setCallbackStatus("submitting");
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+
+      if (!response.ok) throw new Error("Submission failed");
+      setCallbackStatus("success");
+      form.reset();
+    } catch {
+      setCallbackStatus("error");
     }
   }
 
@@ -151,6 +180,84 @@ export function Contact() {
                     </span>
                   </button>
                 </form>
+
+                {callbackStatus === "success" ? (
+                  <div className="mt-6 border-t border-charcoal/15 pt-6">
+                    <p className="text-body font-medium text-charcoal">
+                      Got it — we&apos;ll give you a call soon.
+                    </p>
+                  </div>
+                ) : (
+                  <>
+                    <button
+                      type="button"
+                      onClick={() => setShowCallback((v) => !v)}
+                      aria-expanded={showCallback}
+                      aria-controls="callback-form"
+                      className="label mt-6 inline-flex items-center gap-2 text-charcoal/60 underline decoration-charcoal/25 underline-offset-4 transition-colors hover:text-charcoal"
+                    >
+                      {showCallback
+                        ? "Never mind"
+                        : "Prefer a call? Request a call back"}
+                    </button>
+
+                    {showCallback && (
+                      <form
+                        id="callback-form"
+                        onSubmit={handleCallbackSubmit}
+                        className="mt-6 max-w-md border-t border-charcoal/15 pt-6"
+                      >
+                        <div className="grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2">
+                          <div>
+                            <label htmlFor="cb-name" className="label text-charcoal/50">
+                              Name <span className="normal-case text-charcoal/35">(optional)</span>
+                            </label>
+                            <input id="cb-name" name="name" type="text" className={`mt-2 ${inputClass}`} />
+                          </div>
+                          <div>
+                            <label htmlFor="cb-phone" className="label text-charcoal/50">
+                              Phone
+                            </label>
+                            <input id="cb-phone" name="phone" type="tel" required className={`mt-2 ${inputClass}`} />
+                          </div>
+                          <div className="sm:col-span-2">
+                            <label htmlFor="cb-question" className="label text-charcoal/50">
+                              What&apos;s your question?
+                            </label>
+                            <textarea
+                              id="cb-question"
+                              name="question"
+                              required
+                              rows={2}
+                              className={`mt-2 resize-none ${inputClass}`}
+                            />
+                          </div>
+                        </div>
+
+                        {callbackStatus === "error" && (
+                          <p className="text-body mt-4 max-w-md text-copper">
+                            Something went wrong — please try again, or email{" "}
+                            <span className="font-medium">
+                              {contactInformation.email}
+                            </span>
+                            .
+                          </p>
+                        )}
+
+                        <button
+                          type="submit"
+                          disabled={callbackStatus === "submitting"}
+                          className="label group mt-6 inline-flex items-center gap-2 rounded-full border border-charcoal/25 px-6 py-3.5 text-charcoal transition-colors hover:border-charcoal disabled:opacity-60"
+                        >
+                          {callbackStatus === "submitting" ? "Sending…" : "Request Call Back"}
+                          <span aria-hidden className="transition-transform group-hover:translate-x-0.5">
+                            →
+                          </span>
+                        </button>
+                      </form>
+                    )}
+                  </>
+                )}
               </Reveal>
             )}
           </div>
