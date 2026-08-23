@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { fadeUp, viewportOnce } from "@/lib/motion";
@@ -20,8 +19,6 @@ const cards = [
 ];
 
 export function Hero() {
-  const [wordmarkDone, setWordmarkDone] = useState(false);
-
   return (
     <section id="top" className="relative overflow-hidden pt-36 pb-14 sm:pt-44 sm:pb-24 lg:pb-32">
       <HeroBackground />
@@ -54,12 +51,7 @@ export function Hero() {
           transition={{ delay: 0.05 }}
           className="mt-6 text-display font-display font-extrabold tracking-tight text-cream sm:mt-8"
         >
-          <Typewriter
-            text="ARCWELL"
-            startDelay={300}
-            speed={70}
-            onDone={() => setWordmarkDone(true)}
-          />
+          <Typewriter text="ARCWELL" startDelay={300} speed={70} />
         </motion.h1>
         <motion.p
           initial="hidden"
@@ -67,7 +59,7 @@ export function Hero() {
           variants={fadeUp}
           className="mt-1 text-[0.9rem] font-medium uppercase text-copper-light tracking-[1em] sm:text-base"
         >
-          <Typewriter text="CREATIVE" start={wordmarkDone} startDelay={120} speed={55} />
+          <Typewriter text="CREATIVE" startDelay={300} speed={62} />
         </motion.p>
 
         <div className="mt-8 grid grid-cols-1 gap-10 sm:mt-10 lg:grid-cols-12 lg:items-end lg:gap-8">
