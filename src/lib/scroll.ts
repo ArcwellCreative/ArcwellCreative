@@ -1,5 +1,13 @@
 import type { MouseEvent } from "react";
 
+// Lets any component (e.g. a hero card) tell the Services accordion which
+// panel to open, without lifting that state up through the whole tree.
+export const OPEN_SERVICE_EVENT = "arcwell:open-service";
+
+export function dispatchOpenService(index: number) {
+  window.dispatchEvent(new CustomEvent<number>(OPEN_SERVICE_EVENT, { detail: index }));
+}
+
 export function handleHashLinkClick(
   event: MouseEvent<HTMLAnchorElement>,
   href: string,

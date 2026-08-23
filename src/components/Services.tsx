@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { services } from "@/lib/site-config";
+import { OPEN_SERVICE_EVENT } from "@/lib/scroll";
 import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
 import { Typewriter } from "./Typewriter";
@@ -10,6 +11,15 @@ import { LogoCarousel } from "./LogoCarousel";
 
 export function Services() {
   const [openIndex, setOpenIndex] = useState(0);
+
+  useEffect(() => {
+    function handleOpenService(e: Event) {
+      const index = (e as CustomEvent<number>).detail;
+      setOpenIndex(index);
+    }
+    window.addEventListener(OPEN_SERVICE_EVENT, handleOpenService);
+    return () => window.removeEventListener(OPEN_SERVICE_EVENT, handleOpenService);
+  }, []);
 
   return (
     <section id="services" className="border-t border-cream/10 py-28 sm:py-36">

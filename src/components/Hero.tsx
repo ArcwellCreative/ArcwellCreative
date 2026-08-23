@@ -1,9 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import { motion } from "motion/react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { fadeUp, viewportOnce } from "@/lib/motion";
-import { handleHashLinkClick } from "@/lib/scroll";
+import { handleHashLinkClick, dispatchOpenService } from "@/lib/scroll";
 import { Typewriter } from "./Typewriter";
 import { HeroBackground } from "./HeroBackground";
 import { BrowserMockup } from "./mockups/BrowserMockup";
@@ -11,14 +12,40 @@ import { PosterMockup } from "./mockups/PosterMockup";
 import { MarkMockup } from "./mockups/MarkMockup";
 import { GridMockup } from "./mockups/GridMockup";
 
+const EASE_OUT_EXPO = [0.16, 1, 0.3, 1] as const;
+
 const cards = [
   { Comp: BrowserMockup, label: "Web Design", rotate: -4, y: 0 },
   { Comp: PosterMockup, label: "Advertising", rotate: -1, y: -10 },
-  { Comp: MarkMockup, label: "Branding", rotate: 2, y: 2 },
+  { Comp: MarkMockup, label: "Branding", rotate: 2, y: 2, serviceIndex: 1 },
   { Comp: GridMockup, label: "Print Design", rotate: 5, y: -6 },
 ];
 
 export function Hero() {
+  const [zoomOrigin, setZoomOrigin] = useState<{ x: number; y: number } | null>(null);
+  const shouldReduceMotion = useReducedMotion();
+
+  function openService(index: number, origin: { x: number; y: number } | null) {
+    if (shouldReduceMotion || !origin) {
+      dispatchOpenService(index);
+      document.getElementById("services")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      history.pushState(null, "", "#services");
+      return;
+    }
+
+    setZoomOrigin(origin);
+    dispatchOpenService(index);
+
+    // Jump instantly while the copper circle is covering the screen, so the
+    // reveal underneath is already settled once it fades out.
+    setTimeout(() => {
+      document.getElementById("services")?.scrollIntoView({ behavior: "auto", block: "start" });
+      history.pushState(null, "", "#services");
+    }, 360);
+
+    setTimeout(() => setZoomOrigin(null), 950);
+  }
+
   return (
     <section id="top" className="relative overflow-hidden pt-36 pb-14 sm:pt-44 sm:pb-24 lg:pb-32">
       <HeroBackground />
@@ -111,23 +138,59 @@ export function Hero() {
         </div>
 
         <div className="mt-24 grid grid-cols-2 gap-4 sm:mt-28 sm:gap-6 lg:grid-cols-4 lg:gap-8">
-          {cards.map(({ Comp, label, rotate, y }, i) => (
-            <motion.div
-              key={label}
-              initial={{ opacity: 0, y: 40, rotate: 0 }}
-              whileInView={{ opacity: 1, y, rotate }}
-              viewport={viewportOnce}
-              transition={{ duration: 0.8, delay: 0.15 * i, ease: [0.16, 1, 0.3, 1] }}
-              className="group"
-            >
-              <div className="aspect-[4/5] transition-transform duration-350 ease-in-out will-change-transform group-hover:-translate-y-7 group-hover:rotate-0">
+          {cards.map(({ Comp, label, rotate, y, serviceIndex }, i) => {
+            const cardVisual = (
+              <div className="aspect-[4/5] transition-transform duration-350 ease-in-out will-change-transform group-hover:-translate-y-7 group-hover:rotate-0 group-hover:scale-[1.06]">
                 <Comp className="shadow-[0_30px_60px_-20px_rgba(0,0,0,0.6)]" />
               </div>
-              <p className="label mt-3 text-cream/55">{label}</p>
-            </motion.div>
-          ))}
+            );
+
+            return (
+              <motion.div
+                key={label}
+                initial={{ opacity: 0, y: 40, rotate: 0 }}
+                whileInView={{ opacity: 1, y, rotate }}
+                viewport={viewportOnce}
+                transition={{ duration: 0.8, delay: 0.15 * i, ease: EASE_OUT_EXPO }}
+                className="group"
+              >
+                {serviceIndex !== undefined ? (
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      const rect = e.currentTarget.getBoundingClientRect();
+                      openService(serviceIndex, {
+                        x: rect.left + rect.width / 2,
+                        y: rect.top + rect.height / 2,
+                      });
+                    }}
+                    aria-label={`Jump to ${label} in Services`}
+                    className="block w-full cursor-pointer text-left"
+                  >
+                    {cardVisual}
+                  </button>
+                ) : (
+                  cardVisual
+                )}
+                <p className="label mt-3 text-cream/55">{label}</p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
+
+      <AnimatePresence>
+        {zoomOrigin && (
+          <motion.div
+            aria-hidden
+            className="pointer-events-none fixed z-[100] rounded-full bg-copper"
+            style={{ left: zoomOrigin.x, top: zoomOrigin.y, x: "-50%", y: "-50%" }}
+            initial={{ width: 16, height: 16, opacity: 0.92 }}
+            animate={{ width: "300vmax", height: "300vmax", opacity: [0.92, 1, 1, 0] }}
+            transition={{ duration: 0.95, ease: EASE_OUT_EXPO, opacity: { duration: 0.95, times: [0, 0.38, 0.62, 1] } }}
+          />
+        )}
+      </AnimatePresence>
     </section>
   );
 }
