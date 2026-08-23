@@ -58,7 +58,7 @@ export function Services() {
                     {service.number}
                   </span>
                   <span
-                    className={`font-display text-h3 flex-1 font-extrabold tracking-tight transition-colors ${
+                    className={`flex-1 text-xl font-medium uppercase tracking-wide transition-colors sm:text-2xl ${
                       isOpen ? "text-cream" : "text-cream/65"
                     }`}
                   >
@@ -89,7 +89,7 @@ export function Services() {
                         <p className="text-body-lg text-cream/65">
                           <Typewriter text={service.description} speed={14} startDelay={100} />
                         </p>
-                        {service.title === "Logo Creation" && <LogoCarousel />}
+                        {service.number === "02" && <LogoCarousel />}
                       </div>
                     </motion.div>
                   )}
