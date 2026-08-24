@@ -115,7 +115,7 @@ export function Footer() {
           </nav>
 
           {socialLinks.length > 0 && (
-            <div className="flex gap-3">
+            <div className="flex w-full items-center justify-center gap-4 sm:w-auto sm:justify-start">
               {socialLinks.map((social) => {
                 const Icon = SOCIAL_ICONS[social.icon];
                 return (
@@ -125,9 +125,9 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.label}
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-cream/15 text-cream/65 transition-colors hover:border-cream/40 hover:text-cream"
+                    className="inline-flex h-14 w-14 items-center justify-center rounded-full border border-cream/15 text-cream/65 transition-colors hover:border-copper-light hover:text-copper-light"
                   >
-                    <Icon size={17} />
+                    <Icon size={24} />
                   </a>
                 );
               })}
