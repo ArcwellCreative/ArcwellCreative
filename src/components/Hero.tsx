@@ -7,7 +7,6 @@ import { fadeUp, viewportOnce } from "@/lib/motion";
 import { handleHashLinkClick, dispatchOpenService } from "@/lib/scroll";
 import { Typewriter } from "./Typewriter";
 import { HeroBackground } from "./HeroBackground";
-import { FreeConceptCallout } from "./FreeConceptCallout";
 import { BrowserMockup } from "./mockups/BrowserMockup";
 import { PosterMockup } from "./mockups/PosterMockup";
 import { MarkMockup } from "./mockups/MarkMockup";
@@ -140,10 +139,6 @@ export function Hero() {
                   →
                 </span>
               </Link>
-            </div>
-
-            <div className="mt-4">
-              <FreeConceptCallout />
             </div>
           </motion.div>
         </div>
