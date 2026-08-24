@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const EASE_OUT_EXPO = [0.16, 1, 0.3, 1] as const;
 
@@ -11,25 +12,6 @@ const FRAMES = [
   { text: "NO CHARGE", bg: "#934d22", fg: "#f4f1ec" },
   { text: "CLICK HERE", bg: "#161618", fg: "#f4f1ec" },
 ];
-
-function ArrowDoodle({ className, flip }: { className?: string; flip?: boolean }) {
-  return (
-    <svg
-      viewBox="0 0 60 60"
-      className={className}
-      style={flip ? { transform: "scaleX(-1)" } : undefined}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={3.5}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d="M56 30C40 32 16 28 6 30" />
-      <path d="M16 20L5 30L16 40" />
-    </svg>
-  );
-}
 
 export function FreeConceptCallout() {
   const shouldReduceMotion = useReducedMotion();
@@ -49,19 +31,19 @@ export function FreeConceptCallout() {
         <>
           <motion.div
             aria-hidden
-            className="pointer-events-none absolute top-1/2 -left-20 hidden -translate-y-1/2 text-copper-light lg:block"
-            animate={{ x: [0, -12, 0], rotate: [0, -6, 0] }}
-            transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+            className="pointer-events-none absolute top-1/2 -left-16 hidden -translate-y-1/2 text-copper-light/70 lg:block"
+            animate={{ x: [0, -10, 0] }}
+            transition={{ duration: 2.4, repeat: Infinity, ease: EASE_OUT_EXPO }}
           >
-            <ArrowDoodle flip className="h-16 w-16" />
+            <ArrowRight className="h-6 w-6" strokeWidth={1.5} />
           </motion.div>
           <motion.div
             aria-hidden
-            className="pointer-events-none absolute top-1/2 -right-20 hidden -translate-y-1/2 text-copper-light lg:block"
-            animate={{ x: [0, 12, 0], rotate: [0, 6, 0] }}
-            transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
+            className="pointer-events-none absolute top-1/2 -right-16 hidden -translate-y-1/2 text-copper-light/70 lg:block"
+            animate={{ x: [0, 10, 0] }}
+            transition={{ duration: 2.4, repeat: Infinity, ease: EASE_OUT_EXPO, delay: 0.4 }}
           >
-            <ArrowDoodle className="h-16 w-16" />
+            <ArrowLeft className="h-6 w-6" strokeWidth={1.5} />
           </motion.div>
         </>
       )}
