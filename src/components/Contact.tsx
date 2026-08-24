@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { Check } from "lucide-react";
 import { contactInformation, serviceOptions } from "@/lib/site-config";
 import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
@@ -157,30 +158,35 @@ export function Contact() {
                           How can we help?{" "}
                           <span className="normal-case text-charcoal/35">(select all that apply)</span>
                         </legend>
-                        <div className="mt-3 flex flex-col gap-3">
-                          {serviceOptions.map((option) => (
-                            <label
-                              key={option}
-                              className="flex cursor-pointer items-center gap-2.5 text-charcoal/80"
-                            >
-                              <input
-                                type="checkbox"
-                                checked={selectedServices.includes(option)}
-                                onChange={() => toggleService(option)}
-                                className="h-4 w-4 accent-copper"
-                              />
-                              {option}
-                            </label>
-                          ))}
-                          <label className="flex cursor-pointer items-center gap-2.5 text-charcoal/80">
-                            <input
-                              type="checkbox"
-                              checked={selectedServices.includes("Other")}
-                              onChange={() => toggleService("Other")}
-                              className="h-4 w-4 accent-copper"
-                            />
-                            Other
-                          </label>
+                        <div className="mt-4 flex flex-col gap-3">
+                          {[...serviceOptions, "Other"].map((option) => {
+                            const selected = selectedServices.includes(option);
+                            return (
+                              <button
+                                key={option}
+                                type="button"
+                                onClick={() => toggleService(option)}
+                                aria-pressed={selected}
+                                className={`flex items-center justify-between rounded-xl border-2 px-5 py-4 text-left text-body-lg font-medium transition-colors ${
+                                  selected
+                                    ? "border-copper bg-copper text-cream"
+                                    : "border-charcoal/15 text-charcoal/80 hover:border-copper/50"
+                                }`}
+                              >
+                                {option}
+                                <span
+                                  aria-hidden
+                                  className={`ml-3 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 transition-colors ${
+                                    selected
+                                      ? "border-cream bg-cream text-copper"
+                                      : "border-charcoal/25"
+                                  }`}
+                                >
+                                  {selected && <Check size={15} strokeWidth={3} />}
+                                </span>
+                              </button>
+                            );
+                          })}
                         </div>
 
                         {selectedServices.includes("Other") && (
