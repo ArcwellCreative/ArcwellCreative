@@ -1,10 +1,17 @@
-export const SERVICE_LOGOS = [
+export type LogoItem = { src: string; alt: string };
+
+export const SERVICE_LOGOS: LogoItem[] = [
   { src: "/logos/period.png", alt: "Period podcast logo" },
   { src: "/logos/forever-is-officially-over.png", alt: "Forever Is Officially Over infinity logo" },
   { src: "/logos/apple-cider-bakers.png", alt: "Apple Cider Bakers logo" },
   { src: "/logos/night-owl.png", alt: "Night Owl logo" },
   { src: "/logos/sunrise.png", alt: "Sunrise logo" },
 ];
+
+// Populate each tier as logos are designed for it.
+export const MINIMAL_LOGOS: LogoItem[] = [];
+export const MID_RANGE_LOGOS: LogoItem[] = [];
+export const ADVANCED_LOGOS: LogoItem[] = [];
 
 const silhouetteCache = new Map<string, string>();
 
