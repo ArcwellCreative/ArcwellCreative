@@ -55,10 +55,10 @@ export function Typewriter({
         {text.split("").map((char, i) => (
           <span
             key={i}
-            className="inline-block transition-[opacity,transform] duration-[420ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
+            className="inline-block transition-[opacity,transform] duration-[220ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
             style={{
               opacity: i < count ? 1 : 0,
-              transform: i < count ? "translateY(0)" : "translateY(0.4em)",
+              transform: i < count ? "translateY(0)" : "translateY(0.18em)",
             }}
           >
             {char}

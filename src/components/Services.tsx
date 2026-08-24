@@ -88,7 +88,7 @@ export function Services() {
                     >
                       <div className="pb-8 pl-0 sm:pb-10 sm:pl-[3.75rem]">
                         <p className="text-body-lg max-w-lg text-cream/65">
-                          <Typewriter text={service.description} speed={14} startDelay={100} />
+                          <Typewriter text={service.description} speed={8} startDelay={60} />
                         </p>
                         {service.number === "02" && <LogoCarousel />}
                       </div>
