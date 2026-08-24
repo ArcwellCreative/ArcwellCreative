@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { fadeUp, viewportOnce } from "@/lib/motion";
@@ -14,6 +14,45 @@ import { MarkMockup } from "./mockups/MarkMockup";
 import { GridMockup } from "./mockups/GridMockup";
 
 const EASE_OUT_EXPO = [0.16, 1, 0.3, 1] as const;
+
+const IMPOSSIBLE_FONTS = [
+  { family: "var(--font-archivo)", weight: 800 },
+  { family: "var(--font-instrument-serif)", weight: 400, style: "italic" },
+  { family: "var(--font-playfair-display)", weight: 700 },
+  { family: "var(--font-dancing-script)", weight: 700 },
+  { family: "var(--font-caveat)", weight: 700 },
+  { family: "var(--font-bebas-neue)", weight: 400 },
+  { family: "var(--font-anton)", weight: 400 },
+  { family: "var(--font-oswald)", weight: 300 },
+  { family: "var(--font-pacifico)", weight: 400 },
+  { family: "var(--font-permanent-marker)", weight: 400 },
+] as const;
+
+function ImpossibleText() {
+  const shouldReduceMotion = useReducedMotion();
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    if (shouldReduceMotion) return;
+    const id = setInterval(() => setIndex((i) => (i + 1) % IMPOSSIBLE_FONTS.length), 160);
+    return () => clearInterval(id);
+  }, [shouldReduceMotion]);
+
+  const font = IMPOSSIBLE_FONTS[index];
+
+  return (
+    <span
+      className="inline-block text-copper-light"
+      style={{
+        fontFamily: font.family,
+        fontWeight: font.weight,
+        fontStyle: font.style ?? "normal",
+      }}
+    >
+      impossible
+    </span>
+  );
+}
 
 const cards = [
   { Comp: BrowserMockup, label: "Web Design", rotate: -4, y: 0 },
@@ -99,7 +138,7 @@ export function Hero() {
             className="text-h2 font-display uppercase leading-[1.03] tracking-tight text-cream lg:col-span-7"
           >
             <span className="font-medium">We make businesses</span>{" "}
-            <span className="font-extrabold text-copper-light">impossible</span>{" "}
+            <ImpossibleText />{" "}
             <span className="font-medium">to overlook.</span>
           </motion.h2>
 
