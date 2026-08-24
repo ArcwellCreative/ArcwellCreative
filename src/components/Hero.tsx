@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { fadeUp, viewportOnce } from "@/lib/motion";
@@ -28,9 +28,21 @@ const IMPOSSIBLE_FONTS = [
   { family: "var(--font-permanent-marker)", weight: 400 },
 ] as const;
 
+const MEASURE_FONT_SIZE = 100;
+
 function ImpossibleText() {
   const shouldReduceMotion = useReducedMotion();
   const [index, setIndex] = useState(0);
+  const [widthEm, setWidthEm] = useState<number | null>(null);
+  const measureRefs = useRef<(HTMLSpanElement | null)[]>([]);
+
+  useEffect(() => {
+    let max = 0;
+    for (const el of measureRefs.current) {
+      if (el) max = Math.max(max, el.getBoundingClientRect().width);
+    }
+    if (max > 0) setWidthEm(max / MEASURE_FONT_SIZE);
+  }, []);
 
   useEffect(() => {
     if (shouldReduceMotion) return;
@@ -41,16 +53,49 @@ function ImpossibleText() {
   const font = IMPOSSIBLE_FONTS[index];
 
   return (
-    <span
-      className="inline-block text-copper-light"
-      style={{
-        fontFamily: font.family,
-        fontWeight: font.weight,
-        fontStyle: font.style ?? "normal",
-      }}
-    >
-      impossible
-    </span>
+    <>
+      <span
+        aria-hidden
+        style={{
+          position: "absolute",
+          visibility: "hidden",
+          top: 0,
+          left: 0,
+          whiteSpace: "nowrap",
+          pointerEvents: "none",
+          fontSize: MEASURE_FONT_SIZE,
+        }}
+      >
+        {IMPOSSIBLE_FONTS.map((f, i) => (
+          <span
+            key={i}
+            ref={(el) => {
+              measureRefs.current[i] = el;
+            }}
+            style={{
+              display: "inline-block",
+              fontFamily: f.family,
+              fontWeight: f.weight,
+              fontStyle: f.style ?? "normal",
+            }}
+          >
+            impossible
+          </span>
+        ))}
+      </span>
+
+      <span
+        className="inline-block text-center text-copper-light"
+        style={{
+          fontFamily: font.family,
+          fontWeight: font.weight,
+          fontStyle: font.style ?? "normal",
+          width: widthEm !== null ? `${widthEm}em` : undefined,
+        }}
+      >
+        impossible
+      </span>
+    </>
   );
 }
 

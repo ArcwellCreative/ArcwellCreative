@@ -80,7 +80,7 @@ export function FreeConceptCallout() {
       <motion.div
         whileHover={{ scale: 1.04 }}
         whileTap={{ scale: 1.18 }}
-        className="rounded-full border-[3px] border-cream bg-[#373635] shadow-[0_20px_50px_-15px_rgba(217,136,71,0.5)]"
+        className="rounded-full border-[3px] border-cream bg-copper shadow-[0_20px_50px_-15px_rgba(217,136,71,0.5)]"
       >
         <Link
           href="/free-concept"
