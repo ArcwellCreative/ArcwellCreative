@@ -9,6 +9,7 @@ import { SectionLabel } from "./SectionLabel";
 import { Typewriter } from "./Typewriter";
 import { LogoCarousel } from "./LogoCarousel";
 import { SocialShowcase } from "./SocialShowcase";
+import { PrintShowcase } from "./PrintShowcase";
 
 export function Services() {
   const [openIndex, setOpenIndex] = useState(0);
@@ -93,6 +94,7 @@ export function Services() {
                         </p>
                         {service.number === "02" && <LogoCarousel />}
                         {service.number === "03" && <SocialShowcase />}
+                        {service.number === "04" && <PrintShowcase />}
                       </div>
                     </motion.div>
                   )}
