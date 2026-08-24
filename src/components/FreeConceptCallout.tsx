@@ -35,7 +35,7 @@ export function FreeConceptCallout() {
   const text = TEXTS[index];
 
   return (
-    <div className="relative inline-flex">
+    <div className="relative flex w-full sm:inline-flex">
       {!shouldReduceMotion && (
         <>
           <motion.div
@@ -80,11 +80,11 @@ export function FreeConceptCallout() {
       <motion.div
         whileHover={{ scale: 1.04 }}
         whileTap={{ scale: 1.18 }}
-        className="rounded-full border-[3px] border-cream bg-copper shadow-[0_20px_50px_-15px_rgba(217,136,71,0.5)]"
+        className="w-full rounded-full border-[3px] border-cream bg-copper shadow-[0_20px_50px_-15px_rgba(217,136,71,0.5)] sm:w-[28rem]"
       >
         <Link
           href="/free-concept"
-          className="label flex w-96 items-center justify-center px-10 py-8 text-2xl text-cream sm:w-[28rem] sm:text-3xl"
+          className="label flex w-full items-center justify-center px-8 py-7 text-xl text-cream sm:px-10 sm:py-8 sm:text-3xl"
         >
           <AnimatePresence mode="wait">
             <motion.span

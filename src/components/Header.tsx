@@ -29,7 +29,7 @@ export function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
-      <div className="container-arc pt-4 sm:pt-6">
+      <div className="container-arc relative z-50 pt-4 sm:pt-6">
         <div
           className={`flex items-center justify-between rounded-full border px-4 py-2.5 transition-colors duration-500 sm:px-5 ${
             scrolled
