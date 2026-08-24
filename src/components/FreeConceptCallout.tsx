@@ -40,7 +40,7 @@ export function FreeConceptCallout() {
         <>
           <motion.div
             aria-hidden
-            className="pointer-events-none absolute top-1/2 -left-28 hidden -translate-y-1/2 text-copper-light lg:block"
+            className="pointer-events-none absolute top-1/2 -left-28 hidden -translate-y-1/2 text-cream lg:block"
             animate={{
               x: [0, -22, 0],
               filter: [
@@ -58,7 +58,7 @@ export function FreeConceptCallout() {
           </motion.div>
           <motion.div
             aria-hidden
-            className="pointer-events-none absolute top-1/2 -right-28 hidden -translate-y-1/2 text-copper-light lg:block"
+            className="pointer-events-none absolute top-1/2 -right-28 hidden -translate-y-1/2 text-cream lg:block"
             animate={{
               x: [0, 22, 0],
               filter: [
