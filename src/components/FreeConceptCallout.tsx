@@ -42,7 +42,7 @@ export function FreeConceptCallout() {
             aria-hidden
             className="pointer-events-none absolute top-1/2 -left-28 hidden -translate-y-1/2 text-copper-light lg:block"
             animate={{ x: [0, -22, 0] }}
-            transition={{ duration: 3.2, repeat: Infinity, ease: EASE_OUT_EXPO }}
+            transition={{ duration: 2.2, repeat: Infinity, ease: EASE_OUT_EXPO }}
           >
             <BoldArrow className="h-6 w-20" />
           </motion.div>
@@ -50,7 +50,7 @@ export function FreeConceptCallout() {
             aria-hidden
             className="pointer-events-none absolute top-1/2 -right-28 hidden -translate-y-1/2 text-copper-light lg:block"
             animate={{ x: [0, 22, 0] }}
-            transition={{ duration: 3.2, repeat: Infinity, ease: EASE_OUT_EXPO }}
+            transition={{ duration: 2.2, repeat: Infinity, ease: EASE_OUT_EXPO }}
           >
             <BoldArrow flip className="h-6 w-20" />
           </motion.div>
