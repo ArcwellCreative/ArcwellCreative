@@ -44,12 +44,15 @@ export function FreeConceptCallout() {
             animate={{
               x: [0, -22, 0],
               filter: [
-                "drop-shadow(0 0 2px rgba(217,136,71,0.3))",
-                "drop-shadow(0 0 14px rgba(217,136,71,0.95))",
-                "drop-shadow(0 0 2px rgba(217,136,71,0.3))",
+                "drop-shadow(0 0 3px rgba(244,241,236,0.35))",
+                "drop-shadow(0 0 10px rgba(244,241,236,0.75))",
+                "drop-shadow(0 0 3px rgba(244,241,236,0.35))",
               ],
             }}
-            transition={{ duration: 2.2, repeat: Infinity, ease: EASE_OUT_EXPO }}
+            transition={{
+              x: { duration: 2.2, repeat: Infinity, ease: EASE_OUT_EXPO },
+              filter: { duration: 2.2, repeat: Infinity, ease: "easeInOut" },
+            }}
           >
             <BoldArrow className="h-6 w-20" />
           </motion.div>
@@ -59,12 +62,15 @@ export function FreeConceptCallout() {
             animate={{
               x: [0, 22, 0],
               filter: [
-                "drop-shadow(0 0 2px rgba(217,136,71,0.3))",
-                "drop-shadow(0 0 14px rgba(217,136,71,0.95))",
-                "drop-shadow(0 0 2px rgba(217,136,71,0.3))",
+                "drop-shadow(0 0 3px rgba(244,241,236,0.35))",
+                "drop-shadow(0 0 10px rgba(244,241,236,0.75))",
+                "drop-shadow(0 0 3px rgba(244,241,236,0.35))",
               ],
             }}
-            transition={{ duration: 2.2, repeat: Infinity, ease: EASE_OUT_EXPO }}
+            transition={{
+              x: { duration: 2.2, repeat: Infinity, ease: EASE_OUT_EXPO },
+              filter: { duration: 2.2, repeat: Infinity, ease: "easeInOut" },
+            }}
           >
             <BoldArrow flip className="h-6 w-20" />
           </motion.div>
