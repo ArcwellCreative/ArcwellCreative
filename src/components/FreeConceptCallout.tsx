@@ -7,9 +7,9 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 const EASE_OUT_EXPO = [0.16, 1, 0.3, 1] as const;
 
 const FRAMES = [
-  { text: "FREE CONCEPT", bg: "#f4f1ec", fg: "#161618" },
-  { text: "NO CHARGE", bg: "#934d22", fg: "#f4f1ec" },
-  { text: "CLICK HERE", bg: "#161618", fg: "#f4f1ec" },
+  { text: "FREE CONCEPT", bg: "#373635", fg: "#f4f1ec" },
+  { text: "NO CHARGE", bg: "#a05c33", fg: "#f4f1ec" },
+  { text: "CLICK HERE", bg: "#d98847", fg: "#161618" },
 ];
 
 function BoldArrow({ className, flip }: { className?: string; flip?: boolean }) {
@@ -66,11 +66,11 @@ export function FreeConceptCallout() {
         transition={{ duration: 0.9, ease: EASE_OUT_EXPO }}
         whileHover={{ scale: 1.04 }}
         whileTap={{ scale: 1.18 }}
-        className="rounded-full border-[3px] border-copper-light shadow-[0_20px_50px_-15px_rgba(147,77,34,0.5)]"
+        className="rounded-full border-[3px] border-cream shadow-[0_20px_50px_-15px_rgba(217,136,71,0.5)]"
       >
         <Link
           href="/free-concept"
-          className="label flex w-72 items-center justify-center px-8 py-6 text-lg sm:w-80 sm:text-xl"
+          className="label flex w-80 items-center justify-center px-8 py-7 text-xl sm:w-96 sm:text-2xl"
           style={{ color: frame.fg }}
         >
           <AnimatePresence mode="wait">
