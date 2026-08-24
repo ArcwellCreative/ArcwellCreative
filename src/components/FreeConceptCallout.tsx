@@ -45,16 +45,16 @@ export function FreeConceptCallout() {
           <motion.div
             aria-hidden
             className="pointer-events-none absolute top-1/2 -left-28 hidden -translate-y-1/2 text-copper-light lg:block"
-            animate={{ x: [0, -14, 0] }}
-            transition={{ duration: 2.4, repeat: Infinity, ease: EASE_OUT_EXPO }}
+            animate={{ x: [0, -22, 0] }}
+            transition={{ duration: 3.2, repeat: Infinity, ease: EASE_OUT_EXPO }}
           >
             <BoldArrow className="h-8 w-20" />
           </motion.div>
           <motion.div
             aria-hidden
             className="pointer-events-none absolute top-1/2 -right-28 hidden -translate-y-1/2 text-copper-light lg:block"
-            animate={{ x: [0, 14, 0] }}
-            transition={{ duration: 2.4, repeat: Infinity, ease: EASE_OUT_EXPO, delay: 0.4 }}
+            animate={{ x: [0, 22, 0] }}
+            transition={{ duration: 3.2, repeat: Infinity, ease: EASE_OUT_EXPO }}
           >
             <BoldArrow flip className="h-8 w-20" />
           </motion.div>
