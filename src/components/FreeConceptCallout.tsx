@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const EASE_OUT_EXPO = [0.16, 1, 0.3, 1] as const;
 
@@ -12,6 +11,20 @@ const FRAMES = [
   { text: "NO CHARGE", bg: "#934d22", fg: "#f4f1ec" },
   { text: "CLICK HERE", bg: "#161618", fg: "#f4f1ec" },
 ];
+
+function BoldArrow({ className, flip }: { className?: string; flip?: boolean }) {
+  return (
+    <svg
+      viewBox="0 0 100 40"
+      className={className}
+      style={flip ? { transform: "scaleX(-1)" } : undefined}
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M0 13H58V0L100 20L58 40V27H0V13Z" />
+    </svg>
+  );
+}
 
 export function FreeConceptCallout() {
   const shouldReduceMotion = useReducedMotion();
@@ -31,19 +44,19 @@ export function FreeConceptCallout() {
         <>
           <motion.div
             aria-hidden
-            className="pointer-events-none absolute top-1/2 -left-16 hidden -translate-y-1/2 text-copper-light/70 lg:block"
-            animate={{ x: [0, -10, 0] }}
+            className="pointer-events-none absolute top-1/2 -left-28 hidden -translate-y-1/2 text-copper-light lg:block"
+            animate={{ x: [0, -14, 0] }}
             transition={{ duration: 2.4, repeat: Infinity, ease: EASE_OUT_EXPO }}
           >
-            <ArrowRight className="h-6 w-6" strokeWidth={1.5} />
+            <BoldArrow className="h-8 w-20" />
           </motion.div>
           <motion.div
             aria-hidden
-            className="pointer-events-none absolute top-1/2 -right-16 hidden -translate-y-1/2 text-copper-light/70 lg:block"
-            animate={{ x: [0, 10, 0] }}
+            className="pointer-events-none absolute top-1/2 -right-28 hidden -translate-y-1/2 text-copper-light lg:block"
+            animate={{ x: [0, 14, 0] }}
             transition={{ duration: 2.4, repeat: Infinity, ease: EASE_OUT_EXPO, delay: 0.4 }}
           >
-            <ArrowLeft className="h-6 w-6" strokeWidth={1.5} />
+            <BoldArrow flip className="h-8 w-20" />
           </motion.div>
         </>
       )}
