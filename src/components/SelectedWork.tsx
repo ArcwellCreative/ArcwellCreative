@@ -14,11 +14,11 @@ export function SelectedWork() {
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
             <Reveal>
-              <SectionLabel>Selected Concepts</SectionLabel>
+              <SectionLabel>Selected Work</SectionLabel>
             </Reveal>
             <Reveal delay={0.1}>
               <h2 className="text-h2 mt-6 max-w-lg font-display font-bold uppercase tracking-tight text-cream">
-                Concept work that shows the range.
+                Work that shows the range.
               </h2>
             </Reveal>
           </div>

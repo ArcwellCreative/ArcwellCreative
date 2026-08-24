@@ -18,7 +18,7 @@ const EASE_OUT_EXPO = [0.16, 1, 0.3, 1] as const;
 const cards = [
   { Comp: BrowserMockup, label: "Web Design", rotate: -4, y: 0 },
   { Comp: PosterMockup, label: "Social Marketing", rotate: -1, y: -10 },
-  { Comp: MarkMockup, label: "Branding", rotate: 2, y: 2, serviceIndex: 1 },
+  { Comp: MarkMockup, label: "Brand Mark", rotate: 2, y: 2, serviceIndex: 1 },
   { Comp: GridMockup, label: "Print Design", rotate: 5, y: -6 },
 ];
 
@@ -90,7 +90,7 @@ export function Hero() {
           <Typewriter text="CREATIVE" startDelay={300} speed={62} />
         </motion.p>
 
-        <div className="mt-8 grid grid-cols-1 gap-10 sm:mt-10 lg:grid-cols-12 lg:items-end lg:gap-8">
+        <div className="mt-8 grid grid-cols-1 gap-10 sm:mt-10 lg:grid-cols-12 lg:items-start lg:gap-8">
           <motion.h2
             initial="hidden"
             animate="visible"
