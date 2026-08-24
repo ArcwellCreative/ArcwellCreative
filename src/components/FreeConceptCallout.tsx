@@ -6,11 +6,7 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 
 const EASE_OUT_EXPO = [0.16, 1, 0.3, 1] as const;
 
-const FRAMES = [
-  { text: "FREE CONCEPT", bg: "#373635", fg: "#f4f1ec" },
-  { text: "NO CHARGE", bg: "#a05c33", fg: "#f4f1ec" },
-  { text: "CLICK HERE", bg: "#d98847", fg: "#161618" },
-];
+const TEXTS = ["FREE CONCEPT", "NO CHARGE", "CLICK HERE"];
 
 function BoldArrow({ className, flip }: { className?: string; flip?: boolean }) {
   return (
@@ -21,7 +17,7 @@ function BoldArrow({ className, flip }: { className?: string; flip?: boolean }) 
       fill="currentColor"
       aria-hidden="true"
     >
-      <path d="M0 13H58V0L100 20L58 40V27H0V13Z" />
+      <path d="M0 17H62V6L100 20L62 34V23H0V17Z" />
     </svg>
   );
 }
@@ -32,11 +28,11 @@ export function FreeConceptCallout() {
 
   useEffect(() => {
     if (shouldReduceMotion) return;
-    const id = setInterval(() => setIndex((i) => (i + 1) % FRAMES.length), 1700);
+    const id = setInterval(() => setIndex((i) => (i + 1) % TEXTS.length), 1700);
     return () => clearInterval(id);
   }, [shouldReduceMotion]);
 
-  const frame = FRAMES[index];
+  const text = TEXTS[index];
 
   return (
     <div className="relative inline-flex">
@@ -48,7 +44,7 @@ export function FreeConceptCallout() {
             animate={{ x: [0, -22, 0] }}
             transition={{ duration: 3.2, repeat: Infinity, ease: EASE_OUT_EXPO }}
           >
-            <BoldArrow className="h-8 w-20" />
+            <BoldArrow className="h-6 w-20" />
           </motion.div>
           <motion.div
             aria-hidden
@@ -56,32 +52,29 @@ export function FreeConceptCallout() {
             animate={{ x: [0, 22, 0] }}
             transition={{ duration: 3.2, repeat: Infinity, ease: EASE_OUT_EXPO }}
           >
-            <BoldArrow flip className="h-8 w-20" />
+            <BoldArrow flip className="h-6 w-20" />
           </motion.div>
         </>
       )}
 
       <motion.div
-        animate={{ backgroundColor: frame.bg }}
-        transition={{ duration: 0.9, ease: EASE_OUT_EXPO }}
         whileHover={{ scale: 1.04 }}
         whileTap={{ scale: 1.18 }}
-        className="rounded-full border-[3px] border-cream shadow-[0_20px_50px_-15px_rgba(217,136,71,0.5)]"
+        className="rounded-full border-[3px] border-cream bg-[#373635] shadow-[0_20px_50px_-15px_rgba(217,136,71,0.5)]"
       >
         <Link
           href="/free-concept"
-          className="label flex w-80 items-center justify-center px-8 py-7 text-xl sm:w-96 sm:text-2xl"
-          style={{ color: frame.fg }}
+          className="label flex w-96 items-center justify-center px-10 py-8 text-2xl text-cream sm:w-[28rem] sm:text-3xl"
         >
           <AnimatePresence mode="wait">
             <motion.span
-              key={frame.text}
+              key={text}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.5, ease: EASE_OUT_EXPO }}
             >
-              {frame.text}
+              {text}
             </motion.span>
           </AnimatePresence>
         </Link>
