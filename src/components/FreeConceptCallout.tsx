@@ -41,7 +41,14 @@ export function FreeConceptCallout() {
           <motion.div
             aria-hidden
             className="pointer-events-none absolute top-1/2 -left-28 hidden -translate-y-1/2 text-copper-light lg:block"
-            animate={{ x: [0, -22, 0] }}
+            animate={{
+              x: [0, -22, 0],
+              filter: [
+                "drop-shadow(0 0 2px rgba(217,136,71,0.3))",
+                "drop-shadow(0 0 14px rgba(217,136,71,0.95))",
+                "drop-shadow(0 0 2px rgba(217,136,71,0.3))",
+              ],
+            }}
             transition={{ duration: 2.2, repeat: Infinity, ease: EASE_OUT_EXPO }}
           >
             <BoldArrow className="h-6 w-20" />
@@ -49,7 +56,14 @@ export function FreeConceptCallout() {
           <motion.div
             aria-hidden
             className="pointer-events-none absolute top-1/2 -right-28 hidden -translate-y-1/2 text-copper-light lg:block"
-            animate={{ x: [0, 22, 0] }}
+            animate={{
+              x: [0, 22, 0],
+              filter: [
+                "drop-shadow(0 0 2px rgba(217,136,71,0.3))",
+                "drop-shadow(0 0 14px rgba(217,136,71,0.95))",
+                "drop-shadow(0 0 2px rgba(217,136,71,0.3))",
+              ],
+            }}
             transition={{ duration: 2.2, repeat: Infinity, ease: EASE_OUT_EXPO }}
           >
             <BoldArrow flip className="h-6 w-20" />
