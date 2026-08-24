@@ -21,8 +21,8 @@ const slideVariants = {
 
 const TIERS: { label: string; logos: LogoItem[] }[] = [
   { label: "Minimal", logos: MINIMAL_LOGOS },
-  { label: "Mid-Range", logos: MID_RANGE_LOGOS },
-  { label: "Advanced", logos: ADVANCED_LOGOS },
+  { label: "Refined", logos: MID_RANGE_LOGOS },
+  { label: "Elevated", logos: ADVANCED_LOGOS },
 ];
 
 function LogoColumn({ label, logos }: { label: string; logos: LogoItem[] }) {
@@ -67,11 +67,11 @@ function LogoColumn({ label, logos }: { label: string; logos: LogoItem[] }) {
   const currentSrc = current ? processed[current.src] : undefined;
 
   return (
-    <div className="flex flex-col items-center gap-6 px-6 text-center sm:gap-7">
-      <div className="relative flex h-32 w-full max-w-44 shrink-0 items-center justify-center sm:h-40">
+    <div className="flex flex-col items-center gap-7 px-8 text-center sm:gap-8 sm:px-12">
+      <div className="relative flex h-40 w-full max-w-56 shrink-0 items-center justify-center sm:h-52 sm:max-w-64">
         {logos.length === 0 ? (
           <div className="flex h-full w-full flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-cream/15 text-cream/30">
-            <ImagePlus size={22} strokeWidth={1.5} />
+            <ImagePlus size={26} strokeWidth={1.5} />
             <span className="label text-[0.65rem]">Coming soon</span>
           </div>
         ) : (
@@ -119,7 +119,7 @@ function LogoColumn({ label, logos }: { label: string; logos: LogoItem[] }) {
 
 export function LogoCarousel() {
   return (
-    <div className="mt-9 grid grid-cols-1 divide-y divide-cream/10 sm:mt-10 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+    <div className="mx-auto mt-9 grid max-w-3xl grid-cols-1 divide-y divide-cream/10 sm:mt-10 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
       {TIERS.map((tier) => (
         <div key={tier.label} className="py-8 first:pt-0 sm:py-0">
           <LogoColumn label={tier.label} logos={tier.logos} />

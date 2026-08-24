@@ -86,8 +86,8 @@ export function Services() {
                       transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="max-w-lg pb-8 pl-0 sm:pb-10 sm:pl-[3.75rem]">
-                        <p className="text-body-lg text-cream/65">
+                      <div className="pb-8 pl-0 sm:pb-10 sm:pl-[3.75rem]">
+                        <p className="text-body-lg max-w-lg text-cream/65">
                           <Typewriter text={service.description} speed={14} startDelay={100} />
                         </p>
                         {service.number === "02" && <LogoCarousel />}
