@@ -8,6 +8,7 @@ import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
 import { Typewriter } from "./Typewriter";
 import { LogoCarousel } from "./LogoCarousel";
+import { SocialShowcase } from "./SocialShowcase";
 
 export function Services() {
   const [openIndex, setOpenIndex] = useState(0);
@@ -91,6 +92,7 @@ export function Services() {
                           <Typewriter text={service.description} speed={8} startDelay={60} />
                         </p>
                         {service.number === "02" && <LogoCarousel />}
+                        {service.number === "03" && <SocialShowcase />}
                       </div>
                     </motion.div>
                   )}
