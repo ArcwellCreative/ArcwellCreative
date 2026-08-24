@@ -98,14 +98,14 @@ export function Hero() {
             transition={{ delay: 0.15 }}
             className="text-h2 font-display uppercase leading-[1.03] tracking-tight text-cream lg:col-span-7"
           >
-            <span className="font-medium">We make businesses</span>{" "}
+            <span className="font-bold">We make businesses</span>{" "}
             <span
               className="normal-case text-copper-light"
               style={{ fontFamily: "var(--font-dancing-script)", fontWeight: 700 }}
             >
               impossible
             </span>{" "}
-            <span className="font-medium">to overlook.</span>
+            <span className="font-bold">to overlook.</span>
           </motion.h2>
 
           <motion.div
