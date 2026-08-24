@@ -7,30 +7,13 @@ import { fadeUp, viewportOnce } from "@/lib/motion";
 import { handleHashLinkClick, dispatchOpenService } from "@/lib/scroll";
 import { Typewriter } from "./Typewriter";
 import { HeroBackground } from "./HeroBackground";
+import { FreeConceptCallout } from "./FreeConceptCallout";
 import { BrowserMockup } from "./mockups/BrowserMockup";
 import { PosterMockup } from "./mockups/PosterMockup";
 import { MarkMockup } from "./mockups/MarkMockup";
 import { GridMockup } from "./mockups/GridMockup";
 
 const EASE_OUT_EXPO = [0.16, 1, 0.3, 1] as const;
-
-function PointingArrow({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 60 60"
-      className={className}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={2.5}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d="M56 14C40 10 16 18 9 30" />
-      <path d="M2 24L9 33L20 28" />
-    </svg>
-  );
-}
 
 const cards = [
   { Comp: BrowserMockup, label: "Web Design", rotate: -4, y: 0 },
@@ -152,28 +135,10 @@ export function Hero() {
                   →
                 </span>
               </Link>
+            </div>
 
-              <div className="relative inline-flex">
-                <Link
-                  href="/free-concept"
-                  className="label group inline-flex items-center gap-2 rounded-full bg-cream px-6 py-3.5 text-ink transition-colors hover:bg-copper-light hover:text-cream"
-                >
-                  Free Concept
-                  <span aria-hidden className="transition-transform group-hover:translate-x-0.5">
-                    →
-                  </span>
-                </Link>
-                {!shouldReduceMotion && (
-                  <motion.div
-                    aria-hidden
-                    className="pointer-events-none absolute top-1/2 -right-16 hidden -translate-y-1/2 text-copper-light sm:block"
-                    animate={{ x: [0, 6, 0], rotate: [2, -3, 2] }}
-                    transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
-                  >
-                    <PointingArrow className="h-14 w-14" />
-                  </motion.div>
-                )}
-              </div>
+            <div className="mt-4">
+              <FreeConceptCallout />
             </div>
           </motion.div>
         </div>
