@@ -66,12 +66,12 @@ export function FreeConceptOffer() {
       <header className="container-arc flex items-center justify-between pt-6 pb-4 sm:pt-8">
         <Link href="/" aria-label="Arcwell Creative — home">
           <Image
-            src="/arcwell-logo-light.png"
+            src="/arcwell-logo-light.svg"
             alt="Arcwell Creative"
-            width={600}
-            height={121}
+            width={738}
+            height={173}
             style={{ height: "auto" }}
-            className="w-[108px]"
+            className="w-[148px]"
             priority
           />
         </Link>

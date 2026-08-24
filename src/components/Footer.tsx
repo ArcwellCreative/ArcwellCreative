@@ -80,12 +80,12 @@ export function Footer() {
         <div className="flex flex-col gap-12 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <Image
-              src="/arcwell-logo-light.png"
+              src="/arcwell-logo-light.svg"
               alt="Arcwell Creative"
-              width={600}
-              height={121}
+              width={738}
+              height={173}
               style={{ height: "auto" }}
-              className="w-[100px]"
+              className="w-[136px]"
             />
             <p className="text-body mt-5 max-w-[26ch] text-cream/60">
               Websites, brands &amp; design for businesses ready to stand

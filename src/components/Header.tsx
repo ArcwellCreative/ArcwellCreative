@@ -45,12 +45,12 @@ export function Header() {
           >
             <HoverTilt>
               <Image
-                src="/arcwell-logo-light.png"
+                src="/arcwell-logo-light.svg"
                 alt="Arcwell Creative"
-                width={600}
-                height={121}
+                width={738}
+                height={173}
                 style={{ height: "auto" }}
-                className="w-[92px] sm:w-[108px]"
+                className="w-[126px] sm:w-[148px]"
                 priority
               />
             </HoverTilt>
